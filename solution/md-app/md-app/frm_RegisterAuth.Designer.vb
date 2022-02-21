@@ -52,7 +52,7 @@ Partial Class frm_RegisterAuth
         Me.tb_RegisterAuth_Password.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_RegisterAuth_Password.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tb_RegisterAuth_Password.HoverState.Parent = Me.tb_RegisterAuth_Password
-        Me.tb_RegisterAuth_Password.Location = New System.Drawing.Point(172, 147)
+        Me.tb_RegisterAuth_Password.Location = New System.Drawing.Point(189, 152)
         Me.tb_RegisterAuth_Password.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tb_RegisterAuth_Password.Name = "tb_RegisterAuth_Password"
         Me.tb_RegisterAuth_Password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(9899)
@@ -80,7 +80,7 @@ Partial Class frm_RegisterAuth
         Me.tb_RegisterAuth_Username.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_RegisterAuth_Username.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tb_RegisterAuth_Username.HoverState.Parent = Me.tb_RegisterAuth_Username
-        Me.tb_RegisterAuth_Username.Location = New System.Drawing.Point(172, 79)
+        Me.tb_RegisterAuth_Username.Location = New System.Drawing.Point(189, 84)
         Me.tb_RegisterAuth_Username.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tb_RegisterAuth_Username.Name = "tb_RegisterAuth_Username"
         Me.tb_RegisterAuth_Username.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -97,7 +97,7 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Password.Enabled = False
         Me.lbl_RegisterAuth_Password.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_RegisterAuth_Password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbl_RegisterAuth_Password.Location = New System.Drawing.Point(45, 161)
+        Me.lbl_RegisterAuth_Password.Location = New System.Drawing.Point(62, 166)
         Me.lbl_RegisterAuth_Password.Name = "lbl_RegisterAuth_Password"
         Me.lbl_RegisterAuth_Password.Size = New System.Drawing.Size(87, 27)
         Me.lbl_RegisterAuth_Password.TabIndex = 5
@@ -111,7 +111,7 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Heading.Enabled = False
         Me.lbl_RegisterAuth_Heading.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_RegisterAuth_Heading.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbl_RegisterAuth_Heading.Location = New System.Drawing.Point(183, 12)
+        Me.lbl_RegisterAuth_Heading.Location = New System.Drawing.Point(202, 12)
         Me.lbl_RegisterAuth_Heading.Name = "lbl_RegisterAuth_Heading"
         Me.lbl_RegisterAuth_Heading.Size = New System.Drawing.Size(119, 47)
         Me.lbl_RegisterAuth_Heading.TabIndex = 3
@@ -125,7 +125,7 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Username.Enabled = False
         Me.lbl_RegisterAuth_Username.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_RegisterAuth_Username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbl_RegisterAuth_Username.Location = New System.Drawing.Point(40, 93)
+        Me.lbl_RegisterAuth_Username.Location = New System.Drawing.Point(57, 98)
         Me.lbl_RegisterAuth_Username.Name = "lbl_RegisterAuth_Username"
         Me.lbl_RegisterAuth_Username.Size = New System.Drawing.Size(92, 27)
         Me.lbl_RegisterAuth_Username.TabIndex = 4
@@ -139,7 +139,7 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Name.Enabled = False
         Me.lbl_RegisterAuth_Name.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_RegisterAuth_Name.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbl_RegisterAuth_Name.Location = New System.Drawing.Point(66, 223)
+        Me.lbl_RegisterAuth_Name.Location = New System.Drawing.Point(83, 228)
         Me.lbl_RegisterAuth_Name.Name = "lbl_RegisterAuth_Name"
         Me.lbl_RegisterAuth_Name.Size = New System.Drawing.Size(57, 27)
         Me.lbl_RegisterAuth_Name.TabIndex = 6
@@ -164,7 +164,7 @@ Partial Class frm_RegisterAuth
         Me.tb_RegisterAuth_Name.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_RegisterAuth_Name.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tb_RegisterAuth_Name.HoverState.Parent = Me.tb_RegisterAuth_Name
-        Me.tb_RegisterAuth_Name.Location = New System.Drawing.Point(172, 214)
+        Me.tb_RegisterAuth_Name.Location = New System.Drawing.Point(189, 219)
         Me.tb_RegisterAuth_Name.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tb_RegisterAuth_Name.Name = "tb_RegisterAuth_Name"
         Me.tb_RegisterAuth_Name.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -181,7 +181,7 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Dept.Enabled = False
         Me.lbl_RegisterAuth_Dept.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_RegisterAuth_Dept.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
-        Me.lbl_RegisterAuth_Dept.Location = New System.Drawing.Point(25, 292)
+        Me.lbl_RegisterAuth_Dept.Location = New System.Drawing.Point(42, 297)
         Me.lbl_RegisterAuth_Dept.Name = "lbl_RegisterAuth_Dept"
         Me.lbl_RegisterAuth_Dept.Size = New System.Drawing.Size(107, 27)
         Me.lbl_RegisterAuth_Dept.TabIndex = 7
@@ -206,7 +206,7 @@ Partial Class frm_RegisterAuth
         Me.tb_RegisterAuth_Dept.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.tb_RegisterAuth_Dept.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tb_RegisterAuth_Dept.HoverState.Parent = Me.tb_RegisterAuth_Dept
-        Me.tb_RegisterAuth_Dept.Location = New System.Drawing.Point(169, 284)
+        Me.tb_RegisterAuth_Dept.Location = New System.Drawing.Point(186, 289)
         Me.tb_RegisterAuth_Dept.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.tb_RegisterAuth_Dept.Name = "tb_RegisterAuth_Dept"
         Me.tb_RegisterAuth_Dept.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -226,7 +226,7 @@ Partial Class frm_RegisterAuth
         Me.btn_Register.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Register.ForeColor = System.Drawing.Color.White
         Me.btn_Register.HoverState.Parent = Me.btn_Register
-        Me.btn_Register.Location = New System.Drawing.Point(153, 361)
+        Me.btn_Register.Location = New System.Drawing.Point(170, 371)
         Me.btn_Register.Name = "btn_Register"
         Me.btn_Register.ShadowDecoration.Parent = Me.btn_Register
         Me.btn_Register.Size = New System.Drawing.Size(180, 45)
@@ -238,7 +238,7 @@ Partial Class frm_RegisterAuth
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(503, 435)
+        Me.ClientSize = New System.Drawing.Size(536, 445)
         Me.Controls.Add(Me.btn_Register)
         Me.Controls.Add(Me.tb_RegisterAuth_Dept)
         Me.Controls.Add(Me.tb_RegisterAuth_Name)

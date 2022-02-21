@@ -45,58 +45,39 @@ Public Class frm_MainMenu
 #Region "Embed Auth Forms"
 
   Dim AuthForm As Form
-  Dim AuthState As Integer = 0
+  Dim AuthState As Integer = 0 ' 0 means login, 1 means registration
 
-  Private Sub AuthPageLoad(sender As Object, e As EventArgs) _
-    Handles Me.Load
-    With frm_LoginAuth
+  Private Sub SetAuthForm(frm As Form, lblText As String, btnText As String)
+    With frm
       .TopLevel = False
-      pnl_Auth.Controls.Add(frm_LoginAuth)
+      pnl_Auth.Controls.Clear()
+      pnl_Auth.Controls.Add(frm)
       .Dock = DockStyle.Fill
       .BringToFront()
       .Show()
-      AuthForm = frm_LoginAuth
+      AuthForm = frm
     End With
-    lbl_ToggleAuthText.Text = "New User? Register instead"
-    btn_ToggleAuth.Text = "Register"
+    lbl_ToggleAuthText.Text = lblText
+    btn_ToggleAuth.Text = btnText
+  End Sub
+
+  Private Sub AuthPageLoad(sender As Object, e As EventArgs) _
+    Handles Me.Load
+    SetAuthForm(frm_LoginAuth, "New User? Register instead", "Register")
     AuthState = 0
   End Sub
 
   Private Sub ToggleAuth(sender As Object, e As EventArgs) _
     Handles btn_ToggleAuth.Click
-    If AuthState = 0 Then
-      AuthState = 1
+    If AuthForm IsNot Nothing Then
       AuthForm.Close()
-      With frm_RegisterAuth
-        .TopLevel = False
-        pnl_Auth.Controls.Clear()
-        pnl_Auth.Controls.Add(frm_RegisterAuth)
-        .Dock = DockStyle.Fill
-        .BringToFront()
-        .Show()
-        AuthForm = frm_RegisterAuth
-      End With
-
-      lbl_ToggleAuthText.Text = "Already Registered? Login Instead"
-      btn_ToggleAuth.Text = "Login"
-    Else
-      AuthState = 0
-      AuthForm.Close()
-      With frm_LoginAuth
-        .TopLevel = False
-        pnl_Auth.Controls.Clear()
-        pnl_Auth.Controls.Add(frm_LoginAuth)
-        .Dock = DockStyle.Fill
-        .BringToFront()
-        .Show()
-        AuthForm = frm_LoginAuth
-      End With
-
-      lbl_ToggleAuthText.Text = "New User? Register instead"
-      btn_ToggleAuth.Text = "Register"
     End If
+    If AuthState = 0 Then
+      SetAuthForm(frm_RegisterAuth, "Already Registered? Login Instead", "Login")
+    Else
+      SetAuthForm(frm_LoginAuth, "New User? Register instead", "Register")
+    End If
+    AuthState = AuthState Xor 1
   End Sub
-
-
 #End Region
 End Class

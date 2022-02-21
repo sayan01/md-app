@@ -58,6 +58,7 @@ Partial Class frm_MainMenu
         Me.btn_Close.ShadowDecoration.Parent = Me.btn_Close
         Me.btn_Close.Size = New System.Drawing.Size(50, 54)
         Me.btn_Close.TabIndex = 0
+        Me.btn_Close.TabStop = False
         Me.btn_Close.Text = "×"
         '
         'pnl_TopBar
@@ -81,9 +82,9 @@ Partial Class frm_MainMenu
         Me.img_TopBar_Logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.img_TopBar_Logo.ContextMenuStrip = Me.ctx_Main
         Me.img_TopBar_Logo.Image = CType(resources.GetObject("img_TopBar_Logo.Image"), System.Drawing.Image)
-        Me.img_TopBar_Logo.Location = New System.Drawing.Point(6, 3)
+        Me.img_TopBar_Logo.Location = New System.Drawing.Point(6, 5)
         Me.img_TopBar_Logo.Name = "img_TopBar_Logo"
-        Me.img_TopBar_Logo.Size = New System.Drawing.Size(45, 45)
+        Me.img_TopBar_Logo.Size = New System.Drawing.Size(45, 40)
         Me.img_TopBar_Logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.img_TopBar_Logo.TabIndex = 0
         Me.img_TopBar_Logo.TabStop = False
