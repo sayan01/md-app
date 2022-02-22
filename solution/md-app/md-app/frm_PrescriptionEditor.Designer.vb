@@ -45,37 +45,36 @@ Partial Class frm_PrescriptionEditor
         Me.tb_Gender = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnl_Header = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_Footer = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btn_Save = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Print = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_Save = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_Left = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lbl_Prescription_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.pnl_Right = New Guna.UI2.WinForms.Guna2Panel()
-        Me.lbl_Advice_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.dgv_PresTable = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.col_med = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_note = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_AddMed = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_AddProc = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_AddMed = New Guna.UI2.WinForms.Guna2Button()
+        Me.lbl_Prescription_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.pnl_Right = New Guna.UI2.WinForms.Guna2Panel()
         Me.rtb_Advice = New System.Windows.Forms.RichTextBox()
         Me.btn_ClearAdvice = New Guna.UI2.WinForms.Guna2Button()
+        Me.lbl_Advice_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_TopBar.SuspendLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctx_Main.SuspendLayout()
         Me.pnl_Header.SuspendLayout()
         Me.pnl_Footer.SuspendLayout()
         Me.pnl_Left.SuspendLayout()
-        Me.pnl_Right.SuspendLayout()
         CType(Me.dgv_PresTable, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_Right.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_TopBar
         '
-        Me.pnl_TopBar.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pnl_TopBar.BackColor = System.Drawing.SystemColors.WindowFrame
         Me.pnl_TopBar.Controls.Add(Me.img_TopBar_Logo)
         Me.pnl_TopBar.Controls.Add(Me.lbl_TopBar_Text)
         Me.pnl_TopBar.Controls.Add(Me.btn_Close)
+        Me.pnl_TopBar.Dock = System.Windows.Forms.DockStyle.Top
         Me.pnl_TopBar.Location = New System.Drawing.Point(0, 0)
         Me.pnl_TopBar.Name = "pnl_TopBar"
         Me.pnl_TopBar.ShadowDecoration.Parent = Me.pnl_TopBar
@@ -152,6 +151,7 @@ Partial Class frm_PrescriptionEditor
         Me.btn_Close.ShadowDecoration.Parent = Me.btn_Close
         Me.btn_Close.Size = New System.Drawing.Size(50, 54)
         Me.btn_Close.TabIndex = 0
+        Me.btn_Close.TabStop = False
         Me.btn_Close.Text = "×"
         '
         'lbl_Date
@@ -171,7 +171,7 @@ Partial Class frm_PrescriptionEditor
         Me.lbl_Name.BackColor = System.Drawing.Color.Transparent
         Me.lbl_Name.Enabled = False
         Me.lbl_Name.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Name.Location = New System.Drawing.Point(283, 28)
+        Me.lbl_Name.Location = New System.Drawing.Point(278, 28)
         Me.lbl_Name.Name = "lbl_Name"
         Me.lbl_Name.Size = New System.Drawing.Size(48, 23)
         Me.lbl_Name.TabIndex = 3
@@ -183,7 +183,7 @@ Partial Class frm_PrescriptionEditor
         Me.lbl_Age.BackColor = System.Drawing.Color.Transparent
         Me.lbl_Age.Enabled = False
         Me.lbl_Age.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Age.Location = New System.Drawing.Point(544, 28)
+        Me.lbl_Age.Location = New System.Drawing.Point(540, 28)
         Me.lbl_Age.Name = "lbl_Age"
         Me.lbl_Age.Size = New System.Drawing.Size(33, 23)
         Me.lbl_Age.TabIndex = 3
@@ -237,7 +237,7 @@ Partial Class frm_PrescriptionEditor
         Me.tb_Name.FocusedState.Parent = Me.tb_Name
         Me.tb_Name.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tb_Name.HoverState.Parent = Me.tb_Name
-        Me.tb_Name.Location = New System.Drawing.Point(337, 29)
+        Me.tb_Name.Location = New System.Drawing.Point(332, 29)
         Me.tb_Name.Name = "tb_Name"
         Me.tb_Name.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tb_Name.PlaceholderText = "name"
@@ -259,7 +259,7 @@ Partial Class frm_PrescriptionEditor
         Me.tb_Age.FocusedState.Parent = Me.tb_Age
         Me.tb_Age.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.tb_Age.HoverState.Parent = Me.tb_Age
-        Me.tb_Age.Location = New System.Drawing.Point(583, 29)
+        Me.tb_Age.Location = New System.Drawing.Point(579, 29)
         Me.tb_Age.Name = "tb_Age"
         Me.tb_Age.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.tb_Age.PlaceholderText = "age"
@@ -313,26 +313,12 @@ Partial Class frm_PrescriptionEditor
         Me.pnl_Footer.BackColor = System.Drawing.SystemColors.ScrollBar
         Me.pnl_Footer.Controls.Add(Me.btn_Print)
         Me.pnl_Footer.Controls.Add(Me.btn_Save)
-        Me.pnl_Footer.Location = New System.Drawing.Point(0, 535)
+        Me.pnl_Footer.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pnl_Footer.Location = New System.Drawing.Point(0, 534)
         Me.pnl_Footer.Name = "pnl_Footer"
         Me.pnl_Footer.ShadowDecoration.Parent = Me.pnl_Footer
         Me.pnl_Footer.Size = New System.Drawing.Size(1064, 72)
         Me.pnl_Footer.TabIndex = 6
-        '
-        'btn_Save
-        '
-        Me.btn_Save.BorderRadius = 20
-        Me.btn_Save.CheckedState.Parent = Me.btn_Save
-        Me.btn_Save.CustomImages.Parent = Me.btn_Save
-        Me.btn_Save.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Save.ForeColor = System.Drawing.Color.White
-        Me.btn_Save.HoverState.Parent = Me.btn_Save
-        Me.btn_Save.Location = New System.Drawing.Point(804, 10)
-        Me.btn_Save.Name = "btn_Save"
-        Me.btn_Save.ShadowDecoration.Parent = Me.btn_Save
-        Me.btn_Save.Size = New System.Drawing.Size(137, 45)
-        Me.btn_Save.TabIndex = 9
-        Me.btn_Save.Text = "Save & Exit"
         '
         'btn_Print
         '
@@ -342,12 +328,27 @@ Partial Class frm_PrescriptionEditor
         Me.btn_Print.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Print.ForeColor = System.Drawing.Color.White
         Me.btn_Print.HoverState.Parent = Me.btn_Print
-        Me.btn_Print.Location = New System.Drawing.Point(947, 10)
+        Me.btn_Print.Location = New System.Drawing.Point(947, 13)
         Me.btn_Print.Name = "btn_Print"
         Me.btn_Print.ShadowDecoration.Parent = Me.btn_Print
         Me.btn_Print.Size = New System.Drawing.Size(104, 45)
         Me.btn_Print.TabIndex = 10
         Me.btn_Print.Text = "Print"
+        '
+        'btn_Save
+        '
+        Me.btn_Save.BorderRadius = 20
+        Me.btn_Save.CheckedState.Parent = Me.btn_Save
+        Me.btn_Save.CustomImages.Parent = Me.btn_Save
+        Me.btn_Save.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_Save.ForeColor = System.Drawing.Color.White
+        Me.btn_Save.HoverState.Parent = Me.btn_Save
+        Me.btn_Save.Location = New System.Drawing.Point(804, 13)
+        Me.btn_Save.Name = "btn_Save"
+        Me.btn_Save.ShadowDecoration.Parent = Me.btn_Save
+        Me.btn_Save.Size = New System.Drawing.Size(137, 45)
+        Me.btn_Save.TabIndex = 9
+        Me.btn_Save.Text = "Save & Exit"
         '
         'pnl_Left
         '
@@ -360,42 +361,6 @@ Partial Class frm_PrescriptionEditor
         Me.pnl_Left.ShadowDecoration.Parent = Me.pnl_Left
         Me.pnl_Left.Size = New System.Drawing.Size(668, 407)
         Me.pnl_Left.TabIndex = 7
-        '
-        'lbl_Prescription_Header
-        '
-        Me.lbl_Prescription_Header.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_Prescription_Header.Enabled = False
-        Me.lbl_Prescription_Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Prescription_Header.Location = New System.Drawing.Point(32, 20)
-        Me.lbl_Prescription_Header.Name = "lbl_Prescription_Header"
-        Me.lbl_Prescription_Header.Size = New System.Drawing.Size(86, 23)
-        Me.lbl_Prescription_Header.TabIndex = 3
-        Me.lbl_Prescription_Header.TabStop = False
-        Me.lbl_Prescription_Header.Text = "Prescription"
-        '
-        'pnl_Right
-        '
-        Me.pnl_Right.BackColor = System.Drawing.SystemColors.GradientActiveCaption
-        Me.pnl_Right.Controls.Add(Me.rtb_Advice)
-        Me.pnl_Right.Controls.Add(Me.btn_ClearAdvice)
-        Me.pnl_Right.Controls.Add(Me.lbl_Advice_Header)
-        Me.pnl_Right.Location = New System.Drawing.Point(666, 129)
-        Me.pnl_Right.Name = "pnl_Right"
-        Me.pnl_Right.ShadowDecoration.Parent = Me.pnl_Right
-        Me.pnl_Right.Size = New System.Drawing.Size(398, 407)
-        Me.pnl_Right.TabIndex = 8
-        '
-        'lbl_Advice_Header
-        '
-        Me.lbl_Advice_Header.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_Advice_Header.Enabled = False
-        Me.lbl_Advice_Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Advice_Header.Location = New System.Drawing.Point(29, 20)
-        Me.lbl_Advice_Header.Name = "lbl_Advice_Header"
-        Me.lbl_Advice_Header.Size = New System.Drawing.Size(111, 23)
-        Me.lbl_Advice_Header.TabIndex = 3
-        Me.lbl_Advice_Header.TabStop = False
-        Me.lbl_Advice_Header.Text = "Doctor's Advice"
         '
         'dgv_PresTable
         '
@@ -415,7 +380,7 @@ Partial Class frm_PrescriptionEditor
         DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_PresTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgv_PresTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_PresTable.ColumnHeadersHeight = 21
         Me.dgv_PresTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_med, Me.col_note})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
@@ -446,7 +411,7 @@ Partial Class frm_PrescriptionEditor
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgv_PresTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgv_PresTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.Height = 21
         Me.dgv_PresTable.ThemeStyle.ReadOnly = True
         Me.dgv_PresTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
@@ -469,21 +434,6 @@ Partial Class frm_PrescriptionEditor
         Me.col_note.Name = "col_note"
         Me.col_note.ReadOnly = True
         '
-        'btn_AddMed
-        '
-        Me.btn_AddMed.BorderRadius = 20
-        Me.btn_AddMed.CheckedState.Parent = Me.btn_AddMed
-        Me.btn_AddMed.CustomImages.Parent = Me.btn_AddMed
-        Me.btn_AddMed.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_AddMed.ForeColor = System.Drawing.Color.White
-        Me.btn_AddMed.HoverState.Parent = Me.btn_AddMed
-        Me.btn_AddMed.Location = New System.Drawing.Point(130, 339)
-        Me.btn_AddMed.Name = "btn_AddMed"
-        Me.btn_AddMed.ShadowDecoration.Parent = Me.btn_AddMed
-        Me.btn_AddMed.Size = New System.Drawing.Size(137, 45)
-        Me.btn_AddMed.TabIndex = 6
-        Me.btn_AddMed.Text = "Add Medicine"
-        '
         'btn_AddProc
         '
         Me.btn_AddProc.BorderRadius = 20
@@ -492,16 +442,56 @@ Partial Class frm_PrescriptionEditor
         Me.btn_AddProc.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_AddProc.ForeColor = System.Drawing.Color.White
         Me.btn_AddProc.HoverState.Parent = Me.btn_AddProc
-        Me.btn_AddProc.Location = New System.Drawing.Point(367, 339)
+        Me.btn_AddProc.Location = New System.Drawing.Point(366, 339)
         Me.btn_AddProc.Name = "btn_AddProc"
         Me.btn_AddProc.ShadowDecoration.Parent = Me.btn_AddProc
         Me.btn_AddProc.Size = New System.Drawing.Size(137, 45)
         Me.btn_AddProc.TabIndex = 7
         Me.btn_AddProc.Text = "Add Procedure"
         '
+        'btn_AddMed
+        '
+        Me.btn_AddMed.BorderRadius = 20
+        Me.btn_AddMed.CheckedState.Parent = Me.btn_AddMed
+        Me.btn_AddMed.CustomImages.Parent = Me.btn_AddMed
+        Me.btn_AddMed.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_AddMed.ForeColor = System.Drawing.Color.White
+        Me.btn_AddMed.HoverState.Parent = Me.btn_AddMed
+        Me.btn_AddMed.Location = New System.Drawing.Point(129, 339)
+        Me.btn_AddMed.Name = "btn_AddMed"
+        Me.btn_AddMed.ShadowDecoration.Parent = Me.btn_AddMed
+        Me.btn_AddMed.Size = New System.Drawing.Size(137, 45)
+        Me.btn_AddMed.TabIndex = 6
+        Me.btn_AddMed.Text = "Add Medicine"
+        '
+        'lbl_Prescription_Header
+        '
+        Me.lbl_Prescription_Header.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_Prescription_Header.Enabled = False
+        Me.lbl_Prescription_Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Prescription_Header.Location = New System.Drawing.Point(32, 20)
+        Me.lbl_Prescription_Header.Name = "lbl_Prescription_Header"
+        Me.lbl_Prescription_Header.Size = New System.Drawing.Size(86, 23)
+        Me.lbl_Prescription_Header.TabIndex = 3
+        Me.lbl_Prescription_Header.TabStop = False
+        Me.lbl_Prescription_Header.Text = "Prescription"
+        '
+        'pnl_Right
+        '
+        Me.pnl_Right.BackColor = System.Drawing.SystemColors.GradientActiveCaption
+        Me.pnl_Right.Controls.Add(Me.rtb_Advice)
+        Me.pnl_Right.Controls.Add(Me.btn_ClearAdvice)
+        Me.pnl_Right.Controls.Add(Me.lbl_Advice_Header)
+        Me.pnl_Right.Location = New System.Drawing.Point(666, 129)
+        Me.pnl_Right.Name = "pnl_Right"
+        Me.pnl_Right.ShadowDecoration.Parent = Me.pnl_Right
+        Me.pnl_Right.Size = New System.Drawing.Size(398, 407)
+        Me.pnl_Right.TabIndex = 8
+        '
         'rtb_Advice
         '
         Me.rtb_Advice.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.rtb_Advice.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rtb_Advice.Location = New System.Drawing.Point(29, 62)
         Me.rtb_Advice.Name = "rtb_Advice"
         Me.rtb_Advice.Size = New System.Drawing.Size(325, 250)
@@ -522,6 +512,18 @@ Partial Class frm_PrescriptionEditor
         Me.btn_ClearAdvice.Size = New System.Drawing.Size(137, 45)
         Me.btn_ClearAdvice.TabIndex = 8
         Me.btn_ClearAdvice.Text = "Clear"
+        '
+        'lbl_Advice_Header
+        '
+        Me.lbl_Advice_Header.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_Advice_Header.Enabled = False
+        Me.lbl_Advice_Header.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Advice_Header.Location = New System.Drawing.Point(29, 20)
+        Me.lbl_Advice_Header.Name = "lbl_Advice_Header"
+        Me.lbl_Advice_Header.Size = New System.Drawing.Size(111, 23)
+        Me.lbl_Advice_Header.TabIndex = 3
+        Me.lbl_Advice_Header.TabStop = False
+        Me.lbl_Advice_Header.Text = "Doctor's Advice"
         '
         'frm_PrescriptionEditor
         '
@@ -545,9 +547,9 @@ Partial Class frm_PrescriptionEditor
         Me.pnl_Footer.ResumeLayout(False)
         Me.pnl_Left.ResumeLayout(False)
         Me.pnl_Left.PerformLayout()
+        CType(Me.dgv_PresTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_Right.ResumeLayout(False)
         Me.pnl_Right.PerformLayout()
-        CType(Me.dgv_PresTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

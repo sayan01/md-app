@@ -1,4 +1,5 @@
-Public Class frm_PrescriptionEditor
+Public Class frm_MedicineSearch
+
 
 #Region " Top Panel "
 #Region " Move Form "
@@ -42,17 +43,5 @@ Public Class frm_PrescriptionEditor
 
 #End Region
 
-  Private Sub ClearAdvice(sender As Object, e As EventArgs) Handles btn_ClearAdvice.Click
-    rtb_Advice.Clear()
-  End Sub
 
-  Private Sub AddMedicine(sender As Object, e As EventArgs) Handles btn_AddMed.Click
-    Dim form As New frm_MedicineSearch
-    form.Show()
-  End Sub
-
-  Private Sub btn_AddProc_Click(sender As Object, e As EventArgs) Handles btn_AddProc.Click
-    Dim form As New frm_ProcedureSearch
-    form.Show()
-  End Sub
 End Class

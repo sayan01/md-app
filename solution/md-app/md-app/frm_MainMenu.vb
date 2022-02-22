@@ -32,7 +32,7 @@ Public Class frm_MainMenu
 
   Private Sub CloseApp(sender As Object, e As EventArgs) _
     Handles btn_Close.Click, ctxItem_Exit.Click, img_TopBar_Logo.DoubleClick
-    Application.Exit()
+    Me.Close()
   End Sub
 
   Private Sub InvokeCtx(sender As Object, e As EventArgs) _
