@@ -99,10 +99,10 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Password.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lbl_RegisterAuth_Password.Location = New System.Drawing.Point(62, 166)
         Me.lbl_RegisterAuth_Password.Name = "lbl_RegisterAuth_Password"
-        Me.lbl_RegisterAuth_Password.Size = New System.Drawing.Size(87, 27)
+        Me.lbl_RegisterAuth_Password.Size = New System.Drawing.Size(95, 27)
         Me.lbl_RegisterAuth_Password.TabIndex = 5
         Me.lbl_RegisterAuth_Password.TabStop = False
-        Me.lbl_RegisterAuth_Password.Text = "Password:"
+        Me.lbl_RegisterAuth_Password.Text = "Password:<span style=""color:red"">*</span>"
         '
         'lbl_RegisterAuth_Heading
         '
@@ -127,10 +127,10 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Username.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lbl_RegisterAuth_Username.Location = New System.Drawing.Point(57, 98)
         Me.lbl_RegisterAuth_Username.Name = "lbl_RegisterAuth_Username"
-        Me.lbl_RegisterAuth_Username.Size = New System.Drawing.Size(92, 27)
+        Me.lbl_RegisterAuth_Username.Size = New System.Drawing.Size(100, 27)
         Me.lbl_RegisterAuth_Username.TabIndex = 4
         Me.lbl_RegisterAuth_Username.TabStop = False
-        Me.lbl_RegisterAuth_Username.Text = "Username:"
+        Me.lbl_RegisterAuth_Username.Text = "Username:<span style=""color:red"">*</span>" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
         'lbl_RegisterAuth_Name
         '
@@ -141,10 +141,10 @@ Partial Class frm_RegisterAuth
         Me.lbl_RegisterAuth_Name.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.lbl_RegisterAuth_Name.Location = New System.Drawing.Point(83, 228)
         Me.lbl_RegisterAuth_Name.Name = "lbl_RegisterAuth_Name"
-        Me.lbl_RegisterAuth_Name.Size = New System.Drawing.Size(57, 27)
+        Me.lbl_RegisterAuth_Name.Size = New System.Drawing.Size(70, 27)
         Me.lbl_RegisterAuth_Name.TabIndex = 6
         Me.lbl_RegisterAuth_Name.TabStop = False
-        Me.lbl_RegisterAuth_Name.Text = "Name:"
+        Me.lbl_RegisterAuth_Name.Text = "Name: <span style=""color:red"">*</span>"
         '
         'tb_RegisterAuth_Name
         '
@@ -250,7 +250,7 @@ Partial Class frm_RegisterAuth
         Me.Controls.Add(Me.lbl_RegisterAuth_Heading)
         Me.Controls.Add(Me.lbl_RegisterAuth_Username)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frm_RegisterAuth"
+        Me.name = "frm_RegisterAuth"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Register"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized

@@ -63,6 +63,7 @@ Public Class frm_MainMenu
 
   Private Sub AuthPageLoad(sender As Object, e As EventArgs) _
     Handles Me.Load
+    Me.CenterToScreen()
     SetAuthForm(frm_LoginAuth, "New User? Register instead", "Register")
     AuthState = 0
   End Sub
