@@ -1,27 +1,27 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_ProcedureSearch
-  Inherits System.Windows.Forms.Form
+    Inherits System.Windows.Forms.Form
 
-  'Form overrides dispose to clean up the component list.
-  <System.Diagnostics.DebuggerNonUserCode()> _
-  Protected Overrides Sub Dispose(ByVal disposing As Boolean)
-    Try
-      If disposing AndAlso components IsNot Nothing Then
-        components.Dispose()
-      End If
-    Finally
-      MyBase.Dispose(disposing)
-    End Try
-  End Sub
+    'Form overrides dispose to clean up the component list.
+    <System.Diagnostics.DebuggerNonUserCode()>
+    Protected Overrides Sub Dispose(ByVal disposing As Boolean)
+        Try
+            If disposing AndAlso components IsNot Nothing Then
+                components.Dispose()
+            End If
+        Finally
+            MyBase.Dispose(disposing)
+        End Try
+    End Sub
 
-  'Required by the Windows Form Designer
-  Private components As System.ComponentModel.IContainer
+    'Required by the Windows Form Designer
+    Private components As System.ComponentModel.IContainer
 
-  'NOTE: The following procedure is required by the Windows Form Designer
-  'It can be modified using the Windows Form Designer.  
-  'Do not modify it using the code editor.
-  <System.Diagnostics.DebuggerStepThrough()> _
-  Private Sub InitializeComponent()
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
+    <System.Diagnostics.DebuggerStepThrough()>
+    Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -42,7 +42,6 @@ Partial Class frm_ProcedureSearch
         Me.btn_Close = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_TopBar = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_Top = New Guna.UI2.WinForms.Guna2Panel()
-        Me.col_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_Procedures, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_Mid.SuspendLayout()
         Me.pnl_Bottom.SuspendLayout()
@@ -72,7 +71,6 @@ Partial Class frm_ProcedureSearch
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgv_Procedures.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_Procedures.ColumnHeadersHeight = 21
-        Me.dgv_Procedures.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_name})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
@@ -276,12 +274,6 @@ Partial Class frm_ProcedureSearch
         Me.pnl_Top.Size = New System.Drawing.Size(1017, 89)
         Me.pnl_Top.TabIndex = 8
         '
-        'col_name
-        '
-        Me.col_name.HeaderText = "Name"
-        Me.col_name.Name = "col_name"
-        Me.col_name.ReadOnly = True
-        '
         'frm_ProcedureSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,5 +313,4 @@ Partial Class frm_ProcedureSearch
     Friend WithEvents btn_Close As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents pnl_TopBar As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents pnl_Top As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents col_name As DataGridViewTextBoxColumn
 End Class

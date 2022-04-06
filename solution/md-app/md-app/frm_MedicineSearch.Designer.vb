@@ -24,9 +24,9 @@ Partial Class frm_MedicineSearch
   Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_MedicineSearch))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnl_TopBar = New Guna.UI2.WinForms.Guna2Panel()
         Me.img_TopBar_Logo = New System.Windows.Forms.PictureBox()
         Me.lbl_TopBar_Text = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -36,22 +36,19 @@ Partial Class frm_MedicineSearch
         Me.ctxItem_Help = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctxItem_Exit = New System.Windows.Forms.ToolStripMenuItem()
         Me.pnl_Top = New Guna.UI2.WinForms.Guna2Panel()
+        Me.tb_SearchInput = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.lbl_Search = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_Mid = New Guna.UI2.WinForms.Guna2Panel()
+        Me.dgv_Medicines = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.pnl_Bottom = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_OK = New Guna.UI2.WinForms.Guna2Button()
-        Me.lbl_Search = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.tb_SearchInput = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.dgv_Medicines = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.col_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Dosage = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pnl_TopBar.SuspendLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctx_Main.SuspendLayout()
         Me.pnl_Top.SuspendLayout()
         Me.pnl_Mid.SuspendLayout()
-        Me.pnl_Bottom.SuspendLayout()
         CType(Me.dgv_Medicines, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_Bottom.SuspendLayout()
         Me.SuspendLayout()
         '
         'pnl_TopBar
@@ -149,6 +146,38 @@ Partial Class frm_MedicineSearch
         Me.pnl_Top.Size = New System.Drawing.Size(1014, 82)
         Me.pnl_Top.TabIndex = 4
         '
+        'tb_SearchInput
+        '
+        Me.tb_SearchInput.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tb_SearchInput.DefaultText = ""
+        Me.tb_SearchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tb_SearchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tb_SearchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_SearchInput.DisabledState.Parent = Me.tb_SearchInput
+        Me.tb_SearchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_SearchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_SearchInput.FocusedState.Parent = Me.tb_SearchInput
+        Me.tb_SearchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_SearchInput.HoverState.Parent = Me.tb_SearchInput
+        Me.tb_SearchInput.Location = New System.Drawing.Point(123, 23)
+        Me.tb_SearchInput.Name = "tb_SearchInput"
+        Me.tb_SearchInput.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tb_SearchInput.PlaceholderText = ""
+        Me.tb_SearchInput.SelectedText = ""
+        Me.tb_SearchInput.ShadowDecoration.Parent = Me.tb_SearchInput
+        Me.tb_SearchInput.Size = New System.Drawing.Size(795, 36)
+        Me.tb_SearchInput.TabIndex = 1
+        '
+        'lbl_Search
+        '
+        Me.lbl_Search.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_Search.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_Search.Location = New System.Drawing.Point(27, 31)
+        Me.lbl_Search.Name = "lbl_Search"
+        Me.lbl_Search.Size = New System.Drawing.Size(58, 22)
+        Me.lbl_Search.TabIndex = 0
+        Me.lbl_Search.Text = "Search:"
+        '
         'pnl_Mid
         '
         Me.pnl_Mid.BackColor = System.Drawing.SystemColors.ActiveBorder
@@ -158,6 +187,67 @@ Partial Class frm_MedicineSearch
         Me.pnl_Mid.ShadowDecoration.Parent = Me.pnl_Mid
         Me.pnl_Mid.Size = New System.Drawing.Size(1014, 410)
         Me.pnl_Mid.TabIndex = 4
+        '
+        'dgv_Medicines
+        '
+        Me.dgv_Medicines.AllowUserToAddRows = False
+        Me.dgv_Medicines.AllowUserToDeleteRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgv_Medicines.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgv_Medicines.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_Medicines.BackgroundColor = System.Drawing.Color.White
+        Me.dgv_Medicines.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgv_Medicines.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgv_Medicines.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_Medicines.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgv_Medicines.ColumnHeadersHeight = 21
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_Medicines.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgv_Medicines.EnableHeadersVisualStyles = False
+        Me.dgv_Medicines.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgv_Medicines.Location = New System.Drawing.Point(27, 19)
+        Me.dgv_Medicines.Margin = New System.Windows.Forms.Padding(15)
+        Me.dgv_Medicines.Name = "dgv_Medicines"
+        Me.dgv_Medicines.ReadOnly = True
+        Me.dgv_Medicines.RowHeadersVisible = False
+        Me.dgv_Medicines.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgv_Medicines.Size = New System.Drawing.Size(963, 372)
+        Me.dgv_Medicines.TabIndex = 0
+        Me.dgv_Medicines.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
+        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.dgv_Medicines.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.dgv_Medicines.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgv_Medicines.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgv_Medicines.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgv_Medicines.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.dgv_Medicines.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.dgv_Medicines.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.dgv_Medicines.ThemeStyle.HeaderStyle.Height = 21
+        Me.dgv_Medicines.ThemeStyle.ReadOnly = True
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.Height = 22
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgv_Medicines.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'pnl_Bottom
         '
@@ -184,118 +274,6 @@ Partial Class frm_MedicineSearch
         Me.btn_OK.TabIndex = 0
         Me.btn_OK.Text = "OK"
         '
-        'lbl_Search
-        '
-        Me.lbl_Search.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_Search.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Search.Location = New System.Drawing.Point(27, 31)
-        Me.lbl_Search.Name = "lbl_Search"
-        Me.lbl_Search.Size = New System.Drawing.Size(58, 22)
-        Me.lbl_Search.TabIndex = 0
-        Me.lbl_Search.Text = "Search:"
-        '
-        'tb_SearchInput
-        '
-        Me.tb_SearchInput.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tb_SearchInput.DefaultText = ""
-        Me.tb_SearchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tb_SearchInput.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tb_SearchInput.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_SearchInput.DisabledState.Parent = Me.tb_SearchInput
-        Me.tb_SearchInput.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_SearchInput.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_SearchInput.FocusedState.Parent = Me.tb_SearchInput
-        Me.tb_SearchInput.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_SearchInput.HoverState.Parent = Me.tb_SearchInput
-        Me.tb_SearchInput.Location = New System.Drawing.Point(123, 23)
-        Me.tb_SearchInput.Name = "tb_SearchInput"
-        Me.tb_SearchInput.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_SearchInput.PlaceholderText = ""
-        Me.tb_SearchInput.SelectedText = ""
-        Me.tb_SearchInput.ShadowDecoration.Parent = Me.tb_SearchInput
-        Me.tb_SearchInput.Size = New System.Drawing.Size(795, 36)
-        Me.tb_SearchInput.TabIndex = 1
-        '
-        'dgv_Medicines
-        '
-        Me.dgv_Medicines.AllowUserToAddRows = False
-        Me.dgv_Medicines.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgv_Medicines.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.dgv_Medicines.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgv_Medicines.BackgroundColor = System.Drawing.Color.White
-        Me.dgv_Medicines.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgv_Medicines.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgv_Medicines.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_Medicines.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgv_Medicines.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Medicines.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_name, Me.col_Dosage, Me.col_Unit})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_Medicines.DefaultCellStyle = DataGridViewCellStyle6
-        Me.dgv_Medicines.EnableHeadersVisualStyles = False
-        Me.dgv_Medicines.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgv_Medicines.Location = New System.Drawing.Point(27, 19)
-        Me.dgv_Medicines.Margin = New System.Windows.Forms.Padding(15)
-        Me.dgv_Medicines.Name = "dgv_Medicines"
-        Me.dgv_Medicines.ReadOnly = True
-        Me.dgv_Medicines.RowHeadersVisible = False
-        Me.dgv_Medicines.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_Medicines.Size = New System.Drawing.Size(963, 372)
-        Me.dgv_Medicines.TabIndex = 0
-        Me.dgv_Medicines.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
-        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgv_Medicines.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgv_Medicines.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.dgv_Medicines.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgv_Medicines.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgv_Medicines.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgv_Medicines.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.dgv_Medicines.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgv_Medicines.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_Medicines.ThemeStyle.HeaderStyle.Height = 21
-        Me.dgv_Medicines.ThemeStyle.ReadOnly = True
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.Height = 22
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgv_Medicines.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'col_name
-        '
-        Me.col_name.HeaderText = "Name"
-        Me.col_name.Name = "col_name"
-        Me.col_name.ReadOnly = True
-        '
-        'col_Dosage
-        '
-        Me.col_Dosage.HeaderText = "Dosage"
-        Me.col_Dosage.Name = "col_Dosage"
-        Me.col_Dosage.ReadOnly = True
-        '
-        'col_Unit
-        '
-        Me.col_Unit.HeaderText = "Unit"
-        Me.col_Unit.Name = "col_Unit"
-        Me.col_Unit.ReadOnly = True
-        '
         'frm_MedicineSearch
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -315,8 +293,8 @@ Partial Class frm_MedicineSearch
         Me.pnl_Top.ResumeLayout(False)
         Me.pnl_Top.PerformLayout()
         Me.pnl_Mid.ResumeLayout(False)
-        Me.pnl_Bottom.ResumeLayout(False)
         CType(Me.dgv_Medicines, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_Bottom.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -334,9 +312,6 @@ Partial Class frm_MedicineSearch
     Friend WithEvents lbl_Search As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents pnl_Mid As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dgv_Medicines As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents col_name As DataGridViewTextBoxColumn
-    Friend WithEvents col_Dosage As DataGridViewTextBoxColumn
-    Friend WithEvents col_Unit As DataGridViewTextBoxColumn
     Friend WithEvents pnl_Bottom As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btn_OK As Guna.UI2.WinForms.Guna2Button
 End Class

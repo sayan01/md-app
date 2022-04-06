@@ -19,16 +19,20 @@ Public Class frm_LoginAuth
     SQLiteCM.Dispose()
   End Sub
 
-  Private Function SHA512(ByVal input) As String
-    Dim hash As Byte() = SHA512Managed.Create().ComputeHash(Encoding.UTF8.GetBytes(input))
-    Dim stringBuilder As New StringBuilder()
-    For i As Integer = 0 To hash.Length - 1
-      stringBuilder.Append(hash(i).ToString("X2"))
-    Next
-    Return stringBuilder.ToString
-  End Function
+    Private Sub frm_LoginAuth_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-  Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_Login.Click
+    End Sub
+
+    Private Function SHA512(ByVal input) As String
+        Dim hash As Byte() = SHA512Managed.Create().ComputeHash(Encoding.UTF8.GetBytes(input))
+        Dim stringBuilder As New StringBuilder()
+        For i As Integer = 0 To hash.Length - 1
+            stringBuilder.Append(hash(i).ToString("X2"))
+        Next
+        Return stringBuilder.ToString
+    End Function
+
+    Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_Login.Click
     If tb_LoginAuth_Username.Text = Nothing _
         Or tb_LoginAuth_Username.Text = "" _
         Or tb_LoginAuth_Password.Text = Nothing _
@@ -37,8 +41,7 @@ Public Class frm_LoginAuth
       Exit Sub
     End If
     user_id = tb_LoginAuth_Username.Text.Trim()
-    passwordhash = SHA512(tb_LoginAuth_Username.Text & tb_LoginAuth_Password.Text)
-
+        passwordhash = SHA512(tb_LoginAuth_Username.Text & tb_LoginAuth_Password.Text)
     DBPath = "Data Source=" & Application.StartupPath & "\data.db;"
     Dim SQLiteCon As New SQLiteConnection(DBPath)
     Try
@@ -59,8 +62,8 @@ Public Class frm_LoginAuth
         Exit Sub
       End If
     Catch ex As Exception
-      MsgBox(ex.Message)
-      Exit Sub
+            MsgBox("Error loading database: " & ex.Message)
+            Exit Sub
     Finally
       TableDB.Dispose()
       SQLiteCon.Dispose()
