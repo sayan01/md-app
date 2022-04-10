@@ -45,35 +45,47 @@ Public Class frm_ProcedureSearch
 #End Region
 
     Dim DBPath As String
-    ReadOnly TableName As String = "procedure"
+  ReadOnly TableName As String = "procedures"
 
-    Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
+  Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
         Dim SQLiteDA As New SQLiteDataAdapter(q, cn)
         SQLiteDA.Fill(tbl)
         SQLiteDA.Dispose()
     End Sub
-    Private Sub frm_MedicineSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        DBPath = "Data Source=" & Application.StartupPath & "\data.db;"
-        Dim SQLiteCon As New SQLiteConnection(DBPath)
-        Try
-            SQLiteCon.Open()
-        Catch ex As Exception
-            SQLiteCon.Dispose()
-            MsgBox("Error Opening Database: " & ex.Message)
-            Exit Sub
-        End Try
-        Dim TableDB As New DataTable
-        Try
-            LoadDB("select name from " & TableName, TableDB, SQLiteCon)
-            dgv_Procedures.DataSource = TableDB
-        Catch ex As Exception
-            MsgBox("Error loading database: " & ex.Message)
-            Exit Sub
-        Finally
-            TableDB.Dispose()
-            SQLiteCon.Dispose()
-        End Try
-    End Sub
+  Private Sub frm_MedicineSearch_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    DBPath = "Data Source=" & Application.StartupPath & "\data.db;"
+    Dim SQLiteCon As New SQLiteConnection(DBPath)
+    Try
+      SQLiteCon.Open()
+    Catch ex As Exception
+      SQLiteCon.Dispose()
+      MsgBox("Error Opening Database: " & ex.Message)
+      Exit Sub
+    End Try
+    Dim TableDB As New DataTable
+    Try
+      LoadDB("select * from " & TableName, TableDB, SQLiteCon)
+      dgv_Procedures.DataSource = TableDB
+    Catch ex As Exception
+      MsgBox("Error loading database: " & ex.Message)
+      Exit Sub
+    Finally
+      TableDB.Dispose()
+      SQLiteCon.Dispose()
+    End Try
+  End Sub
+
+
+  Private Sub btn_OK_Click(sender As Object, e As EventArgs) Handles btn_OK.Click
+    If dgv_Procedures.SelectedRows.Count <> 1 Then
+      MsgBox("Select a Procedure first!")
+      Exit Sub
+    End If
+    Dim row As DataRow = dgv_Procedures.SelectedRows(0).DataBoundItem.Row
+    frm_PrescriptionEditor.dtb_proc.Rows.Add(row(0).ToString, row(1).ToString)
+    frm_PrescriptionEditor.dtb_consol.Rows.Add(row(1).ToString)
+    Me.Hide()
+  End Sub
 
 
 End Class

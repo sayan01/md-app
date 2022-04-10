@@ -24,9 +24,9 @@ Partial Class frm_PrescriptionEditor
   Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_PrescriptionEditor))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.pnl_TopBar = New Guna.UI2.WinForms.Guna2Panel()
         Me.img_TopBar_Logo = New System.Windows.Forms.PictureBox()
         Me.ctx_Main = New System.Windows.Forms.ContextMenuStrip(Me.components)
@@ -39,18 +39,17 @@ Partial Class frm_PrescriptionEditor
         Me.lbl_Name = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_Age = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.lbl_Gender = New Guna.UI2.WinForms.Guna2HtmlLabel()
-        Me.tb_Date = New Guna.UI2.WinForms.Guna2TextBox()
         Me.tb_Name = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.tb_Age = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.tb_Gender = New Guna.UI2.WinForms.Guna2TextBox()
         Me.pnl_Header = New Guna.UI2.WinForms.Guna2Panel()
+        Me.cb_gender = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.num_age = New Guna.UI2.WinForms.Guna2NumericUpDown()
+        Me.dtp_date = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.pnl_Footer = New Guna.UI2.WinForms.Guna2Panel()
         Me.btn_Print = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_Save = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_Left = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgv_PresTable = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.col_med = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_note = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_AddProc = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_AddMed = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_Prescription_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -58,14 +57,17 @@ Partial Class frm_PrescriptionEditor
         Me.rtb_Advice = New System.Windows.Forms.RichTextBox()
         Me.btn_ClearAdvice = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_Advice_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
+        Me.FrmProcedureSearchBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.pnl_TopBar.SuspendLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctx_Main.SuspendLayout()
         Me.pnl_Header.SuspendLayout()
+        CType(Me.num_age, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_Footer.SuspendLayout()
         Me.pnl_Left.SuspendLayout()
         CType(Me.dgv_PresTable, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_Right.SuspendLayout()
+        CType(Me.FrmProcedureSearchBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pnl_TopBar
@@ -183,7 +185,7 @@ Partial Class frm_PrescriptionEditor
         Me.lbl_Age.BackColor = System.Drawing.Color.Transparent
         Me.lbl_Age.Enabled = False
         Me.lbl_Age.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_Age.Location = New System.Drawing.Point(540, 28)
+        Me.lbl_Age.Location = New System.Drawing.Point(656, 29)
         Me.lbl_Age.Name = "lbl_Age"
         Me.lbl_Age.Size = New System.Drawing.Size(33, 23)
         Me.lbl_Age.TabIndex = 3
@@ -202,30 +204,9 @@ Partial Class frm_PrescriptionEditor
         Me.lbl_Gender.TabStop = False
         Me.lbl_Gender.Text = "Gender:"
         '
-        'tb_Date
-        '
-        Me.tb_Date.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tb_Date.DefaultText = ""
-        Me.tb_Date.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tb_Date.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tb_Date.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_Date.DisabledState.Parent = Me.tb_Date
-        Me.tb_Date.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_Date.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_Date.FocusedState.Parent = Me.tb_Date
-        Me.tb_Date.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_Date.HoverState.Parent = Me.tb_Date
-        Me.tb_Date.Location = New System.Drawing.Point(76, 28)
-        Me.tb_Date.Name = "tb_Date"
-        Me.tb_Date.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_Date.PlaceholderText = "date"
-        Me.tb_Date.SelectedText = ""
-        Me.tb_Date.ShadowDecoration.Parent = Me.tb_Date
-        Me.tb_Date.Size = New System.Drawing.Size(178, 23)
-        Me.tb_Date.TabIndex = 0
-        '
         'tb_Name
         '
+        Me.tb_Name.BorderRadius = 5
         Me.tb_Name.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tb_Name.DefaultText = ""
         Me.tb_Name.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
@@ -243,70 +224,84 @@ Partial Class frm_PrescriptionEditor
         Me.tb_Name.PlaceholderText = "name"
         Me.tb_Name.SelectedText = ""
         Me.tb_Name.ShadowDecoration.Parent = Me.tb_Name
-        Me.tb_Name.Size = New System.Drawing.Size(178, 22)
+        Me.tb_Name.Size = New System.Drawing.Size(318, 22)
         Me.tb_Name.TabIndex = 1
-        '
-        'tb_Age
-        '
-        Me.tb_Age.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tb_Age.DefaultText = ""
-        Me.tb_Age.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tb_Age.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tb_Age.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_Age.DisabledState.Parent = Me.tb_Age
-        Me.tb_Age.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_Age.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_Age.FocusedState.Parent = Me.tb_Age
-        Me.tb_Age.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_Age.HoverState.Parent = Me.tb_Age
-        Me.tb_Age.Location = New System.Drawing.Point(579, 29)
-        Me.tb_Age.Name = "tb_Age"
-        Me.tb_Age.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_Age.PlaceholderText = "age"
-        Me.tb_Age.SelectedText = ""
-        Me.tb_Age.ShadowDecoration.Parent = Me.tb_Age
-        Me.tb_Age.Size = New System.Drawing.Size(178, 22)
-        Me.tb_Age.TabIndex = 2
-        '
-        'tb_Gender
-        '
-        Me.tb_Gender.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.tb_Gender.DefaultText = ""
-        Me.tb_Gender.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.tb_Gender.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.tb_Gender.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_Gender.DisabledState.Parent = Me.tb_Gender
-        Me.tb_Gender.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.tb_Gender.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_Gender.FocusedState.Parent = Me.tb_Gender
-        Me.tb_Gender.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.tb_Gender.HoverState.Parent = Me.tb_Gender
-        Me.tb_Gender.Location = New System.Drawing.Point(842, 29)
-        Me.tb_Gender.Name = "tb_Gender"
-        Me.tb_Gender.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tb_Gender.PlaceholderText = "gender"
-        Me.tb_Gender.SelectedText = ""
-        Me.tb_Gender.ShadowDecoration.Parent = Me.tb_Gender
-        Me.tb_Gender.Size = New System.Drawing.Size(178, 22)
-        Me.tb_Gender.TabIndex = 3
         '
         'pnl_Header
         '
         Me.pnl_Header.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.pnl_Header.BackColor = System.Drawing.SystemColors.ControlLight
+        Me.pnl_Header.Controls.Add(Me.cb_gender)
+        Me.pnl_Header.Controls.Add(Me.num_age)
+        Me.pnl_Header.Controls.Add(Me.dtp_date)
         Me.pnl_Header.Controls.Add(Me.lbl_Date)
         Me.pnl_Header.Controls.Add(Me.lbl_Name)
-        Me.pnl_Header.Controls.Add(Me.tb_Gender)
         Me.pnl_Header.Controls.Add(Me.lbl_Age)
-        Me.pnl_Header.Controls.Add(Me.tb_Age)
         Me.pnl_Header.Controls.Add(Me.lbl_Gender)
         Me.pnl_Header.Controls.Add(Me.tb_Name)
-        Me.pnl_Header.Controls.Add(Me.tb_Date)
         Me.pnl_Header.Location = New System.Drawing.Point(0, 51)
         Me.pnl_Header.Name = "pnl_Header"
         Me.pnl_Header.ShadowDecoration.Parent = Me.pnl_Header
         Me.pnl_Header.Size = New System.Drawing.Size(1064, 79)
         Me.pnl_Header.TabIndex = 5
+        '
+        'cb_gender
+        '
+        Me.cb_gender.BackColor = System.Drawing.Color.Transparent
+        Me.cb_gender.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable
+        Me.cb_gender.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cb_gender.FocusedColor = System.Drawing.Color.Empty
+        Me.cb_gender.FocusedState.Parent = Me.cb_gender
+        Me.cb_gender.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cb_gender.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.cb_gender.FormattingEnabled = True
+        Me.cb_gender.HoverState.Parent = Me.cb_gender
+        Me.cb_gender.ItemHeight = 30
+        Me.cb_gender.Items.AddRange(New Object() {"Male", "Female", "Others"})
+        Me.cb_gender.ItemsAppearance.Parent = Me.cb_gender
+        Me.cb_gender.Location = New System.Drawing.Point(842, 23)
+        Me.cb_gender.Name = "cb_gender"
+        Me.cb_gender.ShadowDecoration.Parent = Me.cb_gender
+        Me.cb_gender.Size = New System.Drawing.Size(140, 36)
+        Me.cb_gender.TabIndex = 6
+        '
+        'num_age
+        '
+        Me.num_age.BackColor = System.Drawing.Color.Transparent
+        Me.num_age.BorderRadius = 5
+        Me.num_age.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.num_age.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.num_age.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.num_age.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.num_age.DisabledState.Parent = Me.num_age
+        Me.num_age.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer), CType(CType(177, Byte), Integer))
+        Me.num_age.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer), CType(CType(203, Byte), Integer))
+        Me.num_age.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.num_age.FocusedState.Parent = Me.num_age
+        Me.num_age.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.num_age.ForeColor = System.Drawing.Color.FromArgb(CType(CType(126, Byte), Integer), CType(CType(137, Byte), Integer), CType(CType(149, Byte), Integer))
+        Me.num_age.Location = New System.Drawing.Point(695, 29)
+        Me.num_age.Maximum = New Decimal(New Integer() {200, 0, 0, 0})
+        Me.num_age.Name = "num_age"
+        Me.num_age.ShadowDecoration.Parent = Me.num_age
+        Me.num_age.Size = New System.Drawing.Size(73, 23)
+        Me.num_age.TabIndex = 5
+        '
+        'dtp_date
+        '
+        Me.dtp_date.BorderRadius = 5
+        Me.dtp_date.CheckedState.Parent = Me.dtp_date
+        Me.dtp_date.FillColor = System.Drawing.Color.White
+        Me.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
+        Me.dtp_date.HoverState.Parent = Me.dtp_date
+        Me.dtp_date.Location = New System.Drawing.Point(76, 28)
+        Me.dtp_date.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
+        Me.dtp_date.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
+        Me.dtp_date.Name = "dtp_date"
+        Me.dtp_date.ShadowDecoration.Parent = Me.dtp_date
+        Me.dtp_date.Size = New System.Drawing.Size(178, 23)
+        Me.dtp_date.TabIndex = 4
+        Me.dtp_date.Value = New Date(2022, 4, 10, 19, 41, 9, 133)
         '
         'pnl_Footer
         '
@@ -365,37 +360,42 @@ Partial Class frm_PrescriptionEditor
         'dgv_PresTable
         '
         Me.dgv_PresTable.AllowUserToAddRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.dgv_PresTable.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgv_PresTable.AllowUserToResizeColumns = False
+        Me.dgv_PresTable.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        Me.dgv_PresTable.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_PresTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgv_PresTable.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.dgv_PresTable.BackgroundColor = System.Drawing.Color.White
         Me.dgv_PresTable.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgv_PresTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgv_PresTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_PresTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgv_PresTable.ColumnHeadersHeight = 21
-        Me.dgv_PresTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_med, Me.col_note})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 10.5!)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_PresTable.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_PresTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgv_PresTable.ColumnHeadersHeight = 30
+        Me.dgv_PresTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgv_PresTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id})
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_PresTable.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_PresTable.EnableHeadersVisualStyles = False
         Me.dgv_PresTable.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgv_PresTable.Location = New System.Drawing.Point(57, 62)
         Me.dgv_PresTable.Name = "dgv_PresTable"
-        Me.dgv_PresTable.ReadOnly = True
+        Me.dgv_PresTable.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgv_PresTable.RowHeadersVisible = False
+        Me.dgv_PresTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgv_PresTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgv_PresTable.Size = New System.Drawing.Size(520, 250)
         Me.dgv_PresTable.TabIndex = 4
@@ -411,9 +411,9 @@ Partial Class frm_PrescriptionEditor
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
         Me.dgv_PresTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgv_PresTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.dgv_PresTable.ThemeStyle.HeaderStyle.Height = 21
-        Me.dgv_PresTable.ThemeStyle.ReadOnly = True
+        Me.dgv_PresTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgv_PresTable.ThemeStyle.HeaderStyle.Height = 30
+        Me.dgv_PresTable.ThemeStyle.ReadOnly = False
         Me.dgv_PresTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.dgv_PresTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.dgv_PresTable.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Segoe UI", 10.5!)
@@ -422,17 +422,11 @@ Partial Class frm_PrescriptionEditor
         Me.dgv_PresTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgv_PresTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'col_med
+        'id
         '
-        Me.col_med.HeaderText = "Medicines/Procedures"
-        Me.col_med.Name = "col_med"
-        Me.col_med.ReadOnly = True
-        '
-        'col_note
-        '
-        Me.col_note.HeaderText = "Additional Note"
-        Me.col_note.Name = "col_note"
-        Me.col_note.ReadOnly = True
+        Me.id.HeaderText = "ID"
+        Me.id.Name = "id"
+        Me.id.Visible = False
         '
         'btn_AddProc
         '
@@ -525,6 +519,10 @@ Partial Class frm_PrescriptionEditor
         Me.lbl_Advice_Header.TabStop = False
         Me.lbl_Advice_Header.Text = "Doctor's Advice"
         '
+        'FrmProcedureSearchBindingSource
+        '
+        Me.FrmProcedureSearchBindingSource.DataSource = GetType(md_app.frm_ProcedureSearch)
+        '
         'frm_PrescriptionEditor
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -537,6 +535,7 @@ Partial Class frm_PrescriptionEditor
         Me.Controls.Add(Me.pnl_TopBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "frm_PrescriptionEditor"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "frm_PrescriptionEditor"
         Me.pnl_TopBar.ResumeLayout(False)
         Me.pnl_TopBar.PerformLayout()
@@ -544,12 +543,14 @@ Partial Class frm_PrescriptionEditor
         Me.ctx_Main.ResumeLayout(False)
         Me.pnl_Header.ResumeLayout(False)
         Me.pnl_Header.PerformLayout()
+        CType(Me.num_age, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_Footer.ResumeLayout(False)
         Me.pnl_Left.ResumeLayout(False)
         Me.pnl_Left.PerformLayout()
         CType(Me.dgv_PresTable, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_Right.ResumeLayout(False)
         Me.pnl_Right.PerformLayout()
+        CType(Me.FrmProcedureSearchBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -566,10 +567,7 @@ Partial Class frm_PrescriptionEditor
     Friend WithEvents lbl_Name As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbl_Age As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents lbl_Gender As Guna.UI2.WinForms.Guna2HtmlLabel
-    Friend WithEvents tb_Date As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents tb_Name As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents tb_Age As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents tb_Gender As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents pnl_Header As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents pnl_Footer As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents btn_Save As Guna.UI2.WinForms.Guna2Button
@@ -577,12 +575,15 @@ Partial Class frm_PrescriptionEditor
     Friend WithEvents pnl_Left As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lbl_Prescription_Header As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents dgv_PresTable As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents col_med As DataGridViewTextBoxColumn
-    Friend WithEvents col_note As DataGridViewTextBoxColumn
     Friend WithEvents btn_AddProc As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents btn_AddMed As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents pnl_Right As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents lbl_Advice_Header As Guna.UI2.WinForms.Guna2HtmlLabel
     Friend WithEvents rtb_Advice As RichTextBox
     Friend WithEvents btn_ClearAdvice As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents num_age As Guna.UI2.WinForms.Guna2NumericUpDown
+    Friend WithEvents dtp_date As Guna.UI2.WinForms.Guna2DateTimePicker
+    Friend WithEvents cb_gender As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents id As DataGridViewTextBoxColumn
+    Friend WithEvents FrmProcedureSearchBindingSource As BindingSource
 End Class

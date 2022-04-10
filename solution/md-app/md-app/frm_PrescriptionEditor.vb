@@ -42,17 +42,48 @@ Public Class frm_PrescriptionEditor
 
 #End Region
 
+
+  Public dtb_med As New DataTable
+  Public dtb_proc As New DataTable
+  Public dtb_consol As New DataTable
+
   Private Sub ClearAdvice(sender As Object, e As EventArgs) Handles btn_ClearAdvice.Click
     rtb_Advice.Clear()
   End Sub
 
   Private Sub AddMedicine(sender As Object, e As EventArgs) Handles btn_AddMed.Click
-    Dim form As New frm_MedicineSearch
-    form.Show()
+    frm_MedicineSearch.Show()
   End Sub
 
   Private Sub btn_AddProc_Click(sender As Object, e As EventArgs) Handles btn_AddProc.Click
-    Dim form As New frm_ProcedureSearch
-    form.Show()
+    frm_ProcedureSearch.Show()
+  End Sub
+
+  Private Sub frm_PrescriptionEditor_Load(sender As Object, e As EventArgs) Handles Me.Load
+    dtb_med.Columns.Add("id", GetType(Integer))
+    dtb_med.Columns.Add("name", GetType(String))
+    dtb_med.Columns.Add("dosage", GetType(Integer))
+    dtb_med.Columns.Add("unit", GetType(String))
+
+    dtb_proc.Columns.Add("id", GetType(Integer))
+    dtb_proc.Columns.Add("name", GetType(String))
+
+    dtb_consol.Columns.Add("Medicines/Procedures", GetType(String))
+    dtb_consol.Columns.Add("Additional Note", GetType(String))
+
+    dtb_med.Rows.Add(1, "Paracetamol", 100, "gm")
+    dtb_med.Rows.Add(2, "Norfloxacin", 100, "gm")
+
+    dtb_proc.Rows.Add(1, "Functional Magnetic Resonance Imaging (FMRI)")
+
+    For Each row As DataRow In dtb_med.Rows
+      dtb_consol.Rows.Add(row(1).ToString & " (" & row(2).ToString & " " & row(3).ToString & ")")
+    Next
+
+    For Each row As DataRow In dtb_proc.Rows
+      dtb_consol.Rows.Add(row(1))
+    Next
+
+    dgv_PresTable.DataSource = dtb_consol
   End Sub
 End Class

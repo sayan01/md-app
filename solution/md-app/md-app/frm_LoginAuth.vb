@@ -53,10 +53,15 @@ Public Class frm_LoginAuth
     End Try
     Dim TableDB As New DataTable
     Try
-      LoadDB("select passwordhash from " & TableName & " where user_id='" & user_id & "'", TableDB, SQLiteCon)
+      LoadDB("select passwordhash,is_admin from " & TableName & " where user_id='" & user_id & "'", TableDB, SQLiteCon)
       If TableDB.Rows.Count = 1 AndAlso TableDB.Rows(0).Item(0) = passwordhash Then
-        Dim frm_Prescription As New frm_PrescriptionEditor
-        frm_Prescription.Show()
+        If TableDB.Rows(0).Item(1) = 0 Then
+          frm_UserHome.Show()
+          frm_MainMenu.Hide()
+        Else
+          frm_AdminHome.Show()
+          frm_MainMenu.Hide()
+        End If
       Else
         MsgBox("Username/Password invalid")
         Exit Sub

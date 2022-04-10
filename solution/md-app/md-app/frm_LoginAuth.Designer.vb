@@ -88,7 +88,7 @@ Partial Class frm_LoginAuth
         Me.tb_LoginAuth_Username.SelectedText = ""
         Me.tb_LoginAuth_Username.ShadowDecoration.Parent = Me.tb_LoginAuth_Username
         Me.tb_LoginAuth_Username.Size = New System.Drawing.Size(295, 38)
-        Me.tb_LoginAuth_Username.TabIndex = 1
+        Me.tb_LoginAuth_Username.TabIndex = 0
         '
         'tb_LoginAuth_Password
         '
@@ -133,6 +133,7 @@ Partial Class frm_LoginAuth
         Me.lbl_LoginAuth_Heading.Name = "lbl_LoginAuth_Heading"
         Me.lbl_LoginAuth_Heading.Size = New System.Drawing.Size(82, 47)
         Me.lbl_LoginAuth_Heading.TabIndex = 0
+        Me.lbl_LoginAuth_Heading.TabStop = False
         Me.lbl_LoginAuth_Heading.Text = "Login"
         '
         'btn_Login
@@ -150,7 +151,7 @@ Partial Class frm_LoginAuth
         Me.btn_Login.Name = "btn_Login"
         Me.btn_Login.ShadowDecoration.Parent = Me.btn_Login
         Me.btn_Login.Size = New System.Drawing.Size(180, 45)
-        Me.btn_Login.TabIndex = 9
+        Me.btn_Login.TabIndex = 2
         Me.btn_Login.Text = "Login"
         '
         'frm_LoginAuth

@@ -6,6 +6,7 @@ Public Class frm_RegisterAuth
   Dim DBPath As String
   ReadOnly TableName As String = "users"
   Dim user_id, passwordhash, username, dept As String
+  Dim is_admin As Integer
 
   Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
     Dim SQLiteDA As New SQLiteDataAdapter(q, cn)
@@ -42,6 +43,7 @@ Public Class frm_RegisterAuth
     passwordhash = SHA512(tb_RegisterAuth_Username.Text & tb_RegisterAuth_Password.Text)
     username = tb_RegisterAuth_Name.Text
     dept = tb_RegisterAuth_Dept.Text
+    is_admin = If(chkbx_RegisterAuth_is_admin.Checked, 1, 0)
 
     If user_id.Length > 16 Then
       MsgBox("Username can be 16 characters at max")
@@ -69,8 +71,13 @@ Public Class frm_RegisterAuth
     End Try
     Try
       ExecuteNonQuery("insert into users values('" &
-                      user_id & "','" & passwordhash & "','" & username & "','" & dept & "');", SQLiteCon)
-      MsgBox("User Registered Successfully")
+                      user_id &
+                      "','" & passwordhash &
+                      "','" & username &
+                      "','" & dept &
+                      "','" & is_admin &
+                      "');", SQLiteCon)
+      MsgBox(If(is_admin = 1, "Admin", "User") & " Registered Successfully")
     Catch ex As Exception
       MsgBox("Error Registering User: " & ex.Message)
       Exit Sub

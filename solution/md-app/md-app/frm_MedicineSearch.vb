@@ -44,9 +44,9 @@ Public Class frm_MedicineSearch
 #End Region
 
     Dim DBPath As String
-    ReadOnly TableName As String = "medicine"
+  ReadOnly TableName As String = "medicines"
 
-    Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
+  Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
         Dim SQLiteDA As New SQLiteDataAdapter(q, cn)
         SQLiteDA.Fill(tbl)
         SQLiteDA.Dispose()
@@ -63,8 +63,8 @@ Public Class frm_MedicineSearch
         End Try
         Dim TableDB As New DataTable
         Try
-            LoadDB("select name,dosage,unit from " & TableName, TableDB, SQLiteCon)
-            dgv_Medicines.DataSource = TableDB
+      LoadDB("select * from " & TableName, TableDB, SQLiteCon)
+      dgv_Medicines.DataSource = TableDB
         Catch ex As Exception
             MsgBox("Error loading database: " & ex.Message)
             Exit Sub
@@ -74,4 +74,17 @@ Public Class frm_MedicineSearch
         End Try
     End Sub
 
+  Private Sub btn_OK_Click(sender As Object, e As EventArgs) Handles btn_OK.Click
+    If dgv_Medicines.SelectedRows.Count <> 1 Then
+      MsgBox("Select a Medicine first!")
+      Exit Sub
+    End If
+    Dim row As DataRow = dgv_Medicines.SelectedRows(0).DataBoundItem.Row
+    frm_PrescriptionEditor.dtb_med.Rows.Add(row(0).ToString, row(1).ToString, row(2).ToString, row(3).ToString)
+    frm_PrescriptionEditor.dtb_consol.Rows.Add(
+      row(1).ToString & " (" &
+      row(2).ToString & " " &
+      row(3).ToString & ")")
+    Me.Hide()
+  End Sub
 End Class

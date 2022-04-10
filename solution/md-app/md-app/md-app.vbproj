@@ -82,6 +82,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frm_AdminHome.Designer.vb">
+      <DependentUpon>frm_AdminHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AdminHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_MainMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -119,10 +125,17 @@
     <Compile Include="frm_RegisterAuth.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_UserHome.Designer.vb">
+      <DependentUpon>frm_UserHome.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_UserHome.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -136,6 +149,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frm_AdminHome.resx">
+      <DependentUpon>frm_AdminHome.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_MainMenu.resx">
       <DependentUpon>frm_MainMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -153,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_RegisterAuth.resx">
       <DependentUpon>frm_RegisterAuth.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_UserHome.resx">
+      <DependentUpon>frm_UserHome.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -179,6 +198,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mock-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Import Project="..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('..\packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.115.5\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
