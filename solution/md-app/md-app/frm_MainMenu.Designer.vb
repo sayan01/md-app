@@ -34,9 +34,9 @@ Partial Class frm_MainMenu
         Me.lbl_TopBar_Text = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.pnl_Auth = New Guna.UI2.WinForms.Guna2Panel()
         Me.pnl_ToggleAuth = New Guna.UI2.WinForms.Guna2Panel()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.lbl_ToggleAuthText = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_ToggleAuth = New Guna.UI2.WinForms.Guna2Button()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnl_TopBar.SuspendLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctx_Main.SuspendLayout()
@@ -154,6 +154,16 @@ Partial Class frm_MainMenu
         Me.pnl_ToggleAuth.Size = New System.Drawing.Size(333, 552)
         Me.pnl_ToggleAuth.TabIndex = 2
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(103, 31)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'lbl_ToggleAuthText
         '
         Me.lbl_ToggleAuthText.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -161,7 +171,7 @@ Partial Class frm_MainMenu
         Me.lbl_ToggleAuthText.BackColor = System.Drawing.Color.Transparent
         Me.lbl_ToggleAuthText.Enabled = False
         Me.lbl_ToggleAuthText.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_ToggleAuthText.Location = New System.Drawing.Point(18, 215)
+        Me.lbl_ToggleAuthText.Location = New System.Drawing.Point(18, 289)
         Me.lbl_ToggleAuthText.Name = "lbl_ToggleAuthText"
         Me.lbl_ToggleAuthText.Size = New System.Drawing.Size(288, 27)
         Me.lbl_ToggleAuthText.TabIndex = 1
@@ -180,23 +190,13 @@ Partial Class frm_MainMenu
         Me.btn_ToggleAuth.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_ToggleAuth.ForeColor = System.Drawing.Color.White
         Me.btn_ToggleAuth.HoverState.Parent = Me.btn_ToggleAuth
-        Me.btn_ToggleAuth.Location = New System.Drawing.Point(18, 263)
+        Me.btn_ToggleAuth.Location = New System.Drawing.Point(18, 337)
         Me.btn_ToggleAuth.Name = "btn_ToggleAuth"
         Me.btn_ToggleAuth.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.btn_ToggleAuth.ShadowDecoration.Parent = Me.btn_ToggleAuth
         Me.btn_ToggleAuth.Size = New System.Drawing.Size(302, 45)
         Me.btn_ToggleAuth.TabIndex = 0
         Me.btn_ToggleAuth.Text = "Login"
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(103, 31)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox1.TabIndex = 2
-        Me.PictureBox1.TabStop = False
         '
         'frm_MainMenu
         '

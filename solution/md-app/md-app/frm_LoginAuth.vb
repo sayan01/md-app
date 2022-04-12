@@ -55,11 +55,11 @@ Public Class frm_LoginAuth
     Dim TableDB As New DataTable
     Try
       LoadDB("select * from " & TableName & " where user_id='" & user_id & "'", TableDB, SQLiteCon)
-      If TableDB.Rows.Count = 1 AndAlso TableDB.Rows(0).Item(0) = passwordhash Then
+      If TableDB.Rows.Count = 1 AndAlso TableDB.Rows(0)(1) = passwordhash Then
         Dim row As DataRow = TableDB.Rows(0)
         username = row(2)
-        dept = row(2)
-        is_admin = row(2)
+        dept = row(3)
+        is_admin = row(4)
         If is_admin = 0 Then
           frm_UserHome.Show()
           frm_MainMenu.Hide()
@@ -69,6 +69,7 @@ Public Class frm_LoginAuth
         End If
       Else
         MsgBox("Username/Password invalid")
+        MsgBox(passwordhash + " vs " + TableDB.Rows(0).Item(1))
         Exit Sub
       End If
     Catch ex As Exception

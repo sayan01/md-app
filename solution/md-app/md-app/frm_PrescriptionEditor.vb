@@ -47,7 +47,7 @@ Public Class frm_PrescriptionEditor
 #End Region
 
   Dim DBPath As String
-  ReadOnly TableName As String = "visits"
+  Dim TableName As String = "visits"
 
   Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
     Dim SQLiteDA As New SQLiteDataAdapter(q, cn)
@@ -106,6 +106,64 @@ Public Class frm_PrescriptionEditor
 
     dgv_PresTable.DataSource = dtb_consol
     dgv_PresTable.Columns("Medicines/Procedures").ReadOnly = True
+  End Sub
+
+  Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
+    If tb_Name.Text.Length > 50 Then
+      MsgBox("Name max length is 50")
+    End If
+    DBPath = "Data Source=" & Application.StartupPath & "\data.db;"
+    Dim SQLiteCon As New SQLiteConnection(DBPath)
+    Try
+      SQLiteCon.Open()
+    Catch ex As Exception
+      SQLiteCon.Dispose()
+      MsgBox("Error connecting to database:" & ex.Message)
+      Exit Sub
+    End Try
+    Try
+      ExecuteNonQuery("insert into " & TableName &
+                      "(user_id, patient_name , patient_age , patient_gender , date )" &
+                      " values('" &
+                      frm_LoginAuth.user_id &
+                      "','" & tb_Name.Text &
+                      "','" & num_age.Value &
+                      "','" & cb_gender.SelectedItem.ToString &
+                      "','" & dtp_date.Value.ToLongDateString &
+                      "');", SQLiteCon)
+      Dim dtb As New DataTable
+      LoadDB("select last_insert_rowid()", dtb, SQLiteCon)
+      Dim visit_id = dtb.Rows(0)(0)
+      ' insert each medicine and procedure into med/proc table
+      TableName = "prescriptions"
+      ' medicines
+      For Each row In dtb_med.Rows
+        ExecuteNonQuery("insert into " & TableName &
+                     "(visit_id, medicine_id)" &
+                     " values('" &
+                     visit_id &
+                     "','" & row(0) &
+                     "');", SQLiteCon)
+      Next
+      ' procedures
+      For Each row In dtb_proc.Rows
+        ExecuteNonQuery("insert into " & TableName &
+                     "(visit_id, procedure_id)" &
+                     " values('" &
+                     visit_id &
+                     "','" & row(0) &
+                     "');", SQLiteCon)
+      Next
+      MsgBox("Prescription Saved")
+
+    Catch ex As Exception
+      MsgBox("Error Saving Data to Database: " & ex.Message)
+      Exit Sub
+    Finally
+      SQLiteCon.Dispose()
+      Me.Close()
+      frm_UserHome.Show()
+    End Try
   End Sub
 
   Private Sub Next_Enabled_Check(sender As Object, e As EventArgs) _
