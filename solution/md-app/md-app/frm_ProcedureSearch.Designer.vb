@@ -55,6 +55,7 @@ Partial Class frm_ProcedureSearch
         '
         Me.dgv_Procedures.AllowUserToAddRows = False
         Me.dgv_Procedures.AllowUserToDeleteRows = False
+        Me.dgv_Procedures.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.dgv_Procedures.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_Procedures.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill

@@ -42,8 +42,7 @@ Public Class frm_UserHome
   End Sub
 
   Private Sub btn_NewPres_Click(sender As Object, e As EventArgs) Handles btn_NewPres.Click
-    Dim frm_Prescription As New frm_PrescriptionEditor
-    frm_Prescription.Show()
+    frm_PrescriptionEditor.Show()
     Me.Hide()
   End Sub
 

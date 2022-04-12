@@ -5,7 +5,8 @@ Imports System.Security.Cryptography
 Public Class frm_LoginAuth
   Dim DBPath As String
   ReadOnly TableName As String = "users"
-  Dim user_id, passwordhash, dept As String
+  Public user_id, passwordhash, username, dept As String
+  Public is_admin As Integer
 
   Private Sub LoadDB(ByVal q As String, ByVal tbl As DataTable, ByVal cn As SQLiteConnection)
     Dim SQLiteDA As New SQLiteDataAdapter(q, cn)
@@ -53,9 +54,13 @@ Public Class frm_LoginAuth
     End Try
     Dim TableDB As New DataTable
     Try
-      LoadDB("select passwordhash,is_admin from " & TableName & " where user_id='" & user_id & "'", TableDB, SQLiteCon)
+      LoadDB("select * from " & TableName & " where user_id='" & user_id & "'", TableDB, SQLiteCon)
       If TableDB.Rows.Count = 1 AndAlso TableDB.Rows(0).Item(0) = passwordhash Then
-        If TableDB.Rows(0).Item(1) = 0 Then
+        Dim row As DataRow = TableDB.Rows(0)
+        username = row(2)
+        dept = row(2)
+        is_admin = row(2)
+        If is_admin = 0 Then
           frm_UserHome.Show()
           frm_MainMenu.Hide()
         Else

@@ -49,7 +49,6 @@ Partial Class frm_PrescriptionEditor
         Me.btn_Save = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_Left = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgv_PresTable = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_AddProc = New Guna.UI2.WinForms.Guna2Button()
         Me.btn_AddMed = New Guna.UI2.WinForms.Guna2Button()
         Me.lbl_Prescription_Header = New Guna.UI2.WinForms.Guna2HtmlLabel()
@@ -263,7 +262,7 @@ Partial Class frm_PrescriptionEditor
         Me.cb_gender.Name = "cb_gender"
         Me.cb_gender.ShadowDecoration.Parent = Me.cb_gender
         Me.cb_gender.Size = New System.Drawing.Size(140, 36)
-        Me.cb_gender.TabIndex = 6
+        Me.cb_gender.TabIndex = 3
         '
         'num_age
         '
@@ -285,7 +284,7 @@ Partial Class frm_PrescriptionEditor
         Me.num_age.Name = "num_age"
         Me.num_age.ShadowDecoration.Parent = Me.num_age
         Me.num_age.Size = New System.Drawing.Size(73, 23)
-        Me.num_age.TabIndex = 5
+        Me.num_age.TabIndex = 2
         '
         'dtp_date
         '
@@ -299,9 +298,9 @@ Partial Class frm_PrescriptionEditor
         Me.dtp_date.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.dtp_date.Name = "dtp_date"
         Me.dtp_date.ShadowDecoration.Parent = Me.dtp_date
-        Me.dtp_date.Size = New System.Drawing.Size(178, 23)
-        Me.dtp_date.TabIndex = 4
-        Me.dtp_date.Value = New Date(2022, 4, 10, 19, 41, 9, 133)
+        Me.dtp_date.Size = New System.Drawing.Size(196, 23)
+        Me.dtp_date.TabIndex = 0
+        Me.dtp_date.Value = New Date(2022, 4, 4, 0, 0, 0, 0)
         '
         'pnl_Footer
         '
@@ -323,10 +322,12 @@ Partial Class frm_PrescriptionEditor
         Me.btn_Print.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Print.ForeColor = System.Drawing.Color.White
         Me.btn_Print.HoverState.Parent = Me.btn_Print
-        Me.btn_Print.Location = New System.Drawing.Point(947, 13)
+        Me.btn_Print.Image = CType(resources.GetObject("btn_Print.Image"), System.Drawing.Image)
+        Me.btn_Print.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btn_Print.Location = New System.Drawing.Point(941, 13)
         Me.btn_Print.Name = "btn_Print"
         Me.btn_Print.ShadowDecoration.Parent = Me.btn_Print
-        Me.btn_Print.Size = New System.Drawing.Size(104, 45)
+        Me.btn_Print.Size = New System.Drawing.Size(110, 45)
         Me.btn_Print.TabIndex = 10
         Me.btn_Print.Text = "Print"
         '
@@ -338,10 +339,12 @@ Partial Class frm_PrescriptionEditor
         Me.btn_Save.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_Save.ForeColor = System.Drawing.Color.White
         Me.btn_Save.HoverState.Parent = Me.btn_Save
-        Me.btn_Save.Location = New System.Drawing.Point(804, 13)
+        Me.btn_Save.Image = CType(resources.GetObject("btn_Save.Image"), System.Drawing.Image)
+        Me.btn_Save.ImageSize = New System.Drawing.Size(30, 30)
+        Me.btn_Save.Location = New System.Drawing.Point(770, 13)
         Me.btn_Save.Name = "btn_Save"
         Me.btn_Save.ShadowDecoration.Parent = Me.btn_Save
-        Me.btn_Save.Size = New System.Drawing.Size(137, 45)
+        Me.btn_Save.Size = New System.Drawing.Size(152, 45)
         Me.btn_Save.TabIndex = 9
         Me.btn_Save.Text = "Save & Exit"
         '
@@ -360,8 +363,6 @@ Partial Class frm_PrescriptionEditor
         'dgv_PresTable
         '
         Me.dgv_PresTable.AllowUserToAddRows = False
-        Me.dgv_PresTable.AllowUserToResizeColumns = False
-        Me.dgv_PresTable.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.dgv_PresTable.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_PresTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
@@ -380,7 +381,6 @@ Partial Class frm_PrescriptionEditor
         Me.dgv_PresTable.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_PresTable.ColumnHeadersHeight = 30
         Me.dgv_PresTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgv_PresTable.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 10.5!)
@@ -391,13 +391,13 @@ Partial Class frm_PrescriptionEditor
         Me.dgv_PresTable.DefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_PresTable.EnableHeadersVisualStyles = False
         Me.dgv_PresTable.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgv_PresTable.Location = New System.Drawing.Point(57, 62)
+        Me.dgv_PresTable.Location = New System.Drawing.Point(32, 62)
         Me.dgv_PresTable.Name = "dgv_PresTable"
         Me.dgv_PresTable.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.dgv_PresTable.RowHeadersVisible = False
         Me.dgv_PresTable.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders
         Me.dgv_PresTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgv_PresTable.Size = New System.Drawing.Size(520, 250)
+        Me.dgv_PresTable.Size = New System.Drawing.Size(594, 250)
         Me.dgv_PresTable.TabIndex = 4
         Me.dgv_PresTable.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.[Default]
         Me.dgv_PresTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -422,12 +422,6 @@ Partial Class frm_PrescriptionEditor
         Me.dgv_PresTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgv_PresTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'id
-        '
-        Me.id.HeaderText = "ID"
-        Me.id.Name = "id"
-        Me.id.Visible = False
-        '
         'btn_AddProc
         '
         Me.btn_AddProc.BorderRadius = 20
@@ -436,11 +430,13 @@ Partial Class frm_PrescriptionEditor
         Me.btn_AddProc.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_AddProc.ForeColor = System.Drawing.Color.White
         Me.btn_AddProc.HoverState.Parent = Me.btn_AddProc
+        Me.btn_AddProc.Image = CType(resources.GetObject("btn_AddProc.Image"), System.Drawing.Image)
+        Me.btn_AddProc.ImageSize = New System.Drawing.Size(30, 30)
         Me.btn_AddProc.Location = New System.Drawing.Point(366, 339)
         Me.btn_AddProc.Name = "btn_AddProc"
         Me.btn_AddProc.ShadowDecoration.Parent = Me.btn_AddProc
-        Me.btn_AddProc.Size = New System.Drawing.Size(137, 45)
-        Me.btn_AddProc.TabIndex = 7
+        Me.btn_AddProc.Size = New System.Drawing.Size(168, 45)
+        Me.btn_AddProc.TabIndex = 6
         Me.btn_AddProc.Text = "Add Procedure"
         '
         'btn_AddMed
@@ -451,11 +447,13 @@ Partial Class frm_PrescriptionEditor
         Me.btn_AddMed.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_AddMed.ForeColor = System.Drawing.Color.White
         Me.btn_AddMed.HoverState.Parent = Me.btn_AddMed
+        Me.btn_AddMed.Image = CType(resources.GetObject("btn_AddMed.Image"), System.Drawing.Image)
+        Me.btn_AddMed.ImageSize = New System.Drawing.Size(30, 30)
         Me.btn_AddMed.Location = New System.Drawing.Point(129, 339)
         Me.btn_AddMed.Name = "btn_AddMed"
         Me.btn_AddMed.ShadowDecoration.Parent = Me.btn_AddMed
-        Me.btn_AddMed.Size = New System.Drawing.Size(137, 45)
-        Me.btn_AddMed.TabIndex = 6
+        Me.btn_AddMed.Size = New System.Drawing.Size(161, 45)
+        Me.btn_AddMed.TabIndex = 5
         Me.btn_AddMed.Text = "Add Medicine"
         '
         'lbl_Prescription_Header
@@ -489,7 +487,7 @@ Partial Class frm_PrescriptionEditor
         Me.rtb_Advice.Location = New System.Drawing.Point(29, 62)
         Me.rtb_Advice.Name = "rtb_Advice"
         Me.rtb_Advice.Size = New System.Drawing.Size(325, 250)
-        Me.rtb_Advice.TabIndex = 5
+        Me.rtb_Advice.TabIndex = 7
         Me.rtb_Advice.Text = ""
         '
         'btn_ClearAdvice
@@ -584,6 +582,5 @@ Partial Class frm_PrescriptionEditor
     Friend WithEvents num_age As Guna.UI2.WinForms.Guna2NumericUpDown
     Friend WithEvents dtp_date As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents cb_gender As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents id As DataGridViewTextBoxColumn
     Friend WithEvents FrmProcedureSearchBindingSource As BindingSource
 End Class

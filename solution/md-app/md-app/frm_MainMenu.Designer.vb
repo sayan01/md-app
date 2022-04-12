@@ -36,10 +36,12 @@ Partial Class frm_MainMenu
         Me.pnl_ToggleAuth = New Guna.UI2.WinForms.Guna2Panel()
         Me.lbl_ToggleAuthText = New Guna.UI2.WinForms.Guna2HtmlLabel()
         Me.btn_ToggleAuth = New Guna.UI2.WinForms.Guna2Button()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.pnl_TopBar.SuspendLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctx_Main.SuspendLayout()
         Me.pnl_ToggleAuth.SuspendLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_Close
@@ -143,6 +145,7 @@ Partial Class frm_MainMenu
         '
         Me.pnl_ToggleAuth.Anchor = System.Windows.Forms.AnchorStyles.Right
         Me.pnl_ToggleAuth.BackColor = System.Drawing.SystemColors.InactiveBorder
+        Me.pnl_ToggleAuth.Controls.Add(Me.PictureBox1)
         Me.pnl_ToggleAuth.Controls.Add(Me.lbl_ToggleAuthText)
         Me.pnl_ToggleAuth.Controls.Add(Me.btn_ToggleAuth)
         Me.pnl_ToggleAuth.Location = New System.Drawing.Point(668, 49)
@@ -185,6 +188,16 @@ Partial Class frm_MainMenu
         Me.btn_ToggleAuth.TabIndex = 0
         Me.btn_ToggleAuth.Text = "Login"
         '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(103, 31)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(150, 150)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
         'frm_MainMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -210,6 +223,7 @@ Partial Class frm_MainMenu
         Me.ctx_Main.ResumeLayout(False)
         Me.pnl_ToggleAuth.ResumeLayout(False)
         Me.pnl_ToggleAuth.PerformLayout()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -226,4 +240,5 @@ Partial Class frm_MainMenu
   Friend WithEvents ctxItem_Help As ToolStripMenuItem
   Friend WithEvents ctxItem_Exit As ToolStripMenuItem
   Friend WithEvents img_TopBar_Logo As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class
