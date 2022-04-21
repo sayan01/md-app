@@ -79,7 +79,11 @@ Public Class frm_RegisterAuth
                       "');", SQLiteCon)
       MsgBox(If(is_admin = 1, "Admin", "User") & " Registered Successfully")
     Catch ex As Exception
-      MsgBox("Error Registering User: " & ex.Message)
+      If ex.Message.Contains("UNIQUE") Then
+        MsgBox("Username is already registered")
+      Else
+        MsgBox("Error Registering User: " & ex.Message)
+      End If
       Exit Sub
     Finally
       tb_RegisterAuth_Dept.Text = Nothing
@@ -89,4 +93,13 @@ Public Class frm_RegisterAuth
       SQLiteCon.Dispose()
     End Try
   End Sub
+
+  Private Sub tb_RegisterAuth_KeyDown(sender As Object, e As KeyEventArgs) _
+   Handles tb_RegisterAuth_Dept.KeyDown, tb_RegisterAuth_Name.KeyDown, tb_RegisterAuth_Password.KeyDown,
+   tb_RegisterAuth_Username.KeyDown
+    If e.KeyCode = Keys.Enter Then
+      btn_Register_Click(sender, e)
+    End If
+  End Sub
+
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frm_MedicineSearch
+Partial Class frm_EditMed
   Inherits System.Windows.Forms.Form
 
   'Form overrides dispose to clean up the component list.
@@ -23,7 +23,7 @@ Partial Class frm_MedicineSearch
   <System.Diagnostics.DebuggerStepThrough()> _
   Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_MedicineSearch))
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_EditMed))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -41,7 +41,12 @@ Partial Class frm_MedicineSearch
         Me.pnl_Mid = New Guna.UI2.WinForms.Guna2Panel()
         Me.dgv_Medicines = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.pnl_Bottom = New Guna.UI2.WinForms.Guna2Panel()
-        Me.btn_OK = New Guna.UI2.WinForms.Guna2Button()
+        Me.tb_medunit = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.tb_meddose = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.tb_medname = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.btn_delete = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_new = New Guna.UI2.WinForms.Guna2Button()
+        Me.btn_update = New Guna.UI2.WinForms.Guna2Button()
         Me.pnl_TopBar.SuspendLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.ctx_Main.SuspendLayout()
@@ -62,7 +67,7 @@ Partial Class frm_MedicineSearch
         Me.pnl_TopBar.Name = "pnl_TopBar"
         Me.pnl_TopBar.ShadowDecoration.Parent = Me.pnl_TopBar
         Me.pnl_TopBar.Size = New System.Drawing.Size(1014, 46)
-        Me.pnl_TopBar.TabIndex = 3
+        Me.pnl_TopBar.TabIndex = 5
         '
         'img_TopBar_Logo
         '
@@ -87,11 +92,11 @@ Partial Class frm_MedicineSearch
         Me.lbl_TopBar_Text.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.lbl_TopBar_Text.Location = New System.Drawing.Point(57, 12)
         Me.lbl_TopBar_Text.Name = "lbl_TopBar_Text"
-        Me.lbl_TopBar_Text.Size = New System.Drawing.Size(247, 27)
+        Me.lbl_TopBar_Text.Size = New System.Drawing.Size(223, 27)
         Me.lbl_TopBar_Text.TabIndex = 1
         Me.lbl_TopBar_Text.TabStop = False
         Me.lbl_TopBar_Text.Text = "<span style=""color: white"">MD</span> - <span style=""color: #ddd"">APP</span> -  Me" &
-    "dicine Search"
+    "dicine Edit"
         '
         'btn_Close
         '
@@ -144,7 +149,7 @@ Partial Class frm_MedicineSearch
         Me.pnl_Top.Name = "pnl_Top"
         Me.pnl_Top.ShadowDecoration.Parent = Me.pnl_Top
         Me.pnl_Top.Size = New System.Drawing.Size(1014, 82)
-        Me.pnl_Top.TabIndex = 4
+        Me.pnl_Top.TabIndex = 6
         '
         'tb_SearchInput
         '
@@ -187,7 +192,7 @@ Partial Class frm_MedicineSearch
         Me.pnl_Mid.Name = "pnl_Mid"
         Me.pnl_Mid.ShadowDecoration.Parent = Me.pnl_Mid
         Me.pnl_Mid.Size = New System.Drawing.Size(1014, 410)
-        Me.pnl_Mid.TabIndex = 4
+        Me.pnl_Mid.TabIndex = 7
         '
         'dgv_Medicines
         '
@@ -253,42 +258,148 @@ Partial Class frm_MedicineSearch
         '
         'pnl_Bottom
         '
-        Me.pnl_Bottom.Controls.Add(Me.btn_OK)
+        Me.pnl_Bottom.Controls.Add(Me.tb_medunit)
+        Me.pnl_Bottom.Controls.Add(Me.tb_meddose)
+        Me.pnl_Bottom.Controls.Add(Me.tb_medname)
+        Me.pnl_Bottom.Controls.Add(Me.btn_delete)
+        Me.pnl_Bottom.Controls.Add(Me.btn_new)
+        Me.pnl_Bottom.Controls.Add(Me.btn_update)
         Me.pnl_Bottom.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.pnl_Bottom.Location = New System.Drawing.Point(0, 537)
+        Me.pnl_Bottom.Location = New System.Drawing.Point(0, 541)
         Me.pnl_Bottom.Name = "pnl_Bottom"
         Me.pnl_Bottom.ShadowDecoration.Parent = Me.pnl_Bottom
         Me.pnl_Bottom.Size = New System.Drawing.Size(1014, 78)
-        Me.pnl_Bottom.TabIndex = 4
+        Me.pnl_Bottom.TabIndex = 8
         '
-        'btn_OK
+        'tb_medunit
         '
-        Me.btn_OK.BorderRadius = 20
-        Me.btn_OK.CheckedState.Parent = Me.btn_OK
-        Me.btn_OK.CustomImages.Parent = Me.btn_OK
-        Me.btn_OK.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_OK.ForeColor = System.Drawing.Color.White
-        Me.btn_OK.HoverState.Parent = Me.btn_OK
-        Me.btn_OK.Location = New System.Drawing.Point(901, 21)
-        Me.btn_OK.Name = "btn_OK"
-        Me.btn_OK.ShadowDecoration.Parent = Me.btn_OK
-        Me.btn_OK.Size = New System.Drawing.Size(101, 45)
-        Me.btn_OK.TabIndex = 0
-        Me.btn_OK.Text = "OK"
+        Me.tb_medunit.BorderRadius = 7
+        Me.tb_medunit.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tb_medunit.DefaultText = ""
+        Me.tb_medunit.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tb_medunit.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tb_medunit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_medunit.DisabledState.Parent = Me.tb_medunit
+        Me.tb_medunit.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_medunit.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_medunit.FocusedState.Parent = Me.tb_medunit
+        Me.tb_medunit.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_medunit.HoverState.Parent = Me.tb_medunit
+        Me.tb_medunit.Location = New System.Drawing.Point(428, 21)
+        Me.tb_medunit.Name = "tb_medunit"
+        Me.tb_medunit.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tb_medunit.PlaceholderText = "unit"
+        Me.tb_medunit.SelectedText = ""
+        Me.tb_medunit.ShadowDecoration.Parent = Me.tb_medunit
+        Me.tb_medunit.Size = New System.Drawing.Size(83, 41)
+        Me.tb_medunit.TabIndex = 1
         '
-        'frm_MedicineSearch
+        'tb_meddose
+        '
+        Me.tb_meddose.BorderRadius = 7
+        Me.tb_meddose.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tb_meddose.DefaultText = ""
+        Me.tb_meddose.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tb_meddose.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tb_meddose.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_meddose.DisabledState.Parent = Me.tb_meddose
+        Me.tb_meddose.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_meddose.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_meddose.FocusedState.Parent = Me.tb_meddose
+        Me.tb_meddose.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_meddose.HoverState.Parent = Me.tb_meddose
+        Me.tb_meddose.Location = New System.Drawing.Point(322, 21)
+        Me.tb_meddose.Name = "tb_meddose"
+        Me.tb_meddose.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tb_meddose.PlaceholderText = "dosage"
+        Me.tb_meddose.SelectedText = ""
+        Me.tb_meddose.ShadowDecoration.Parent = Me.tb_meddose
+        Me.tb_meddose.Size = New System.Drawing.Size(100, 41)
+        Me.tb_meddose.TabIndex = 1
+        '
+        'tb_medname
+        '
+        Me.tb_medname.BorderRadius = 7
+        Me.tb_medname.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.tb_medname.DefaultText = ""
+        Me.tb_medname.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.tb_medname.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.tb_medname.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_medname.DisabledState.Parent = Me.tb_medname
+        Me.tb_medname.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.tb_medname.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_medname.FocusedState.Parent = Me.tb_medname
+        Me.tb_medname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.tb_medname.HoverState.Parent = Me.tb_medname
+        Me.tb_medname.Location = New System.Drawing.Point(27, 21)
+        Me.tb_medname.Name = "tb_medname"
+        Me.tb_medname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tb_medname.PlaceholderText = "name"
+        Me.tb_medname.SelectedText = ""
+        Me.tb_medname.ShadowDecoration.Parent = Me.tb_medname
+        Me.tb_medname.Size = New System.Drawing.Size(289, 41)
+        Me.tb_medname.TabIndex = 1
+        '
+        'btn_delete
+        '
+        Me.btn_delete.BorderRadius = 20
+        Me.btn_delete.CheckedState.Parent = Me.btn_delete
+        Me.btn_delete.CustomImages.Parent = Me.btn_delete
+        Me.btn_delete.FillColor = System.Drawing.Color.Maroon
+        Me.btn_delete.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_delete.ForeColor = System.Drawing.Color.White
+        Me.btn_delete.HoverState.Parent = Me.btn_delete
+        Me.btn_delete.Location = New System.Drawing.Point(872, 21)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.ShadowDecoration.Parent = Me.btn_delete
+        Me.btn_delete.Size = New System.Drawing.Size(127, 41)
+        Me.btn_delete.TabIndex = 0
+        Me.btn_delete.Text = "Delete"
+        '
+        'btn_new
+        '
+        Me.btn_new.BorderRadius = 20
+        Me.btn_new.CheckedState.Parent = Me.btn_new
+        Me.btn_new.CustomImages.Parent = Me.btn_new
+        Me.btn_new.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_new.ForeColor = System.Drawing.Color.White
+        Me.btn_new.HoverState.Parent = Me.btn_new
+        Me.btn_new.Location = New System.Drawing.Point(588, 21)
+        Me.btn_new.Name = "btn_new"
+        Me.btn_new.ShadowDecoration.Parent = Me.btn_new
+        Me.btn_new.Size = New System.Drawing.Size(144, 41)
+        Me.btn_new.TabIndex = 0
+        Me.btn_new.Text = "Insert New"
+        '
+        'btn_update
+        '
+        Me.btn_update.BorderRadius = 20
+        Me.btn_update.CheckedState.Parent = Me.btn_update
+        Me.btn_update.CustomImages.Parent = Me.btn_update
+        Me.btn_update.FillColor = System.Drawing.Color.ForestGreen
+        Me.btn_update.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_update.ForeColor = System.Drawing.Color.White
+        Me.btn_update.HoverState.Parent = Me.btn_update
+        Me.btn_update.Location = New System.Drawing.Point(738, 21)
+        Me.btn_update.Name = "btn_update"
+        Me.btn_update.ShadowDecoration.Parent = Me.btn_update
+        Me.btn_update.Size = New System.Drawing.Size(128, 41)
+        Me.btn_update.TabIndex = 0
+        Me.btn_update.Text = "Update"
+        '
+        'frm_EditMed
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1014, 615)
+        Me.ClientSize = New System.Drawing.Size(1014, 619)
+        Me.Controls.Add(Me.pnl_TopBar)
+        Me.Controls.Add(Me.pnl_Top)
         Me.Controls.Add(Me.pnl_Mid)
         Me.Controls.Add(Me.pnl_Bottom)
-        Me.Controls.Add(Me.pnl_Top)
-        Me.Controls.Add(Me.pnl_TopBar)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
-        Me.Name = "frm_MedicineSearch"
+        Me.Name = "frm_EditMed"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_MedicineSearch"
+        Me.Text = "frm_EditMed"
         Me.pnl_TopBar.ResumeLayout(False)
         Me.pnl_TopBar.PerformLayout()
         CType(Me.img_TopBar_Logo, System.ComponentModel.ISupportInitialize).EndInit()
@@ -316,5 +427,10 @@ Partial Class frm_MedicineSearch
     Friend WithEvents pnl_Mid As Guna.UI2.WinForms.Guna2Panel
     Friend WithEvents dgv_Medicines As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents pnl_Bottom As Guna.UI2.WinForms.Guna2Panel
-    Friend WithEvents btn_OK As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents tb_medunit As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents tb_meddose As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents tb_medname As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents btn_delete As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btn_new As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents btn_update As Guna.UI2.WinForms.Guna2Button
 End Class

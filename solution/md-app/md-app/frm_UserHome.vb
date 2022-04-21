@@ -46,6 +46,11 @@ Public Class frm_UserHome
     Me.Hide()
   End Sub
 
+  Private Sub btn_PatHist_Click(sender As Object, e As EventArgs) Handles btn_PatHist.Click
+    frm_PatHist.Show()
+    Me.Hide()
+  End Sub
+
 #End Region
 
 End Class

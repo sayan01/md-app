@@ -108,9 +108,16 @@ Public Class frm_PrescriptionEditor
     dgv_PresTable.Columns("Medicines/Procedures").ReadOnly = True
   End Sub
 
+  Private Function getFormattedDate(dt As Date) As String
+    Dim year As String = dt.Year.ToString()
+    Dim month As String = dt.Month.ToString().PadLeft(2, "0")
+    Dim day As String = dt.Day.ToString().PadLeft(2, "0")
+    Return year + "-" + month + "-" + day
+  End Function
   Private Sub btn_Save_Click(sender As Object, e As EventArgs) Handles btn_Save.Click
     If tb_Name.Text.Length > 50 Then
       MsgBox("Name max length is 50")
+      Exit Sub
     End If
     DBPath = "Data Source=" & Application.StartupPath & "\data.db;"
     Dim SQLiteCon As New SQLiteConnection(DBPath)
@@ -129,7 +136,7 @@ Public Class frm_PrescriptionEditor
                       "','" & tb_Name.Text &
                       "','" & num_age.Value &
                       "','" & cb_gender.SelectedItem.ToString &
-                      "','" & dtp_date.Value.ToLongDateString &
+                      "','" & getFormattedDate(dtp_date.Value) &
                       "');", SQLiteCon)
       Dim dtb As New DataTable
       LoadDB("select last_insert_rowid()", dtb, SQLiteCon)
@@ -178,5 +185,35 @@ Public Class frm_PrescriptionEditor
       btn_Save.Enabled = True
       btn_Print.Enabled = True
     End If
+  End Sub
+
+  Private Sub btn_Print_Click(sender As Object, e As EventArgs) Handles btn_Print.Click
+    Dim strPrint As String = ""
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "           MD-APP             " & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "       Patient Details        " & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "Name:" & vbTab & tb_Name.Text & vbCrLf
+    strPrint += "Age:" & vbTab & num_age.Text & vbCrLf
+    strPrint += "Gender:" & vbTab & cb_gender.SelectedItem & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "        Visit Details         " & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "Doctor:" & vbTab & frm_LoginAuth.username & vbCrLf
+    strPrint += "Date:" & vbTab & dtp_date.Value.ToLongDateString & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "         Prescription         " & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    For Each row As DataRow In dtb_consol.Rows()
+      strPrint += "• " & row(0).ToString & vbTab & "(" & row(1).ToString & ")" & vbCrLf
+    Next
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += "       Doctor's Advice        " & vbCrLf
+    strPrint += "------------------------------" & vbCrLf
+    strPrint += rtb_Advice.Text & vbCrLf
+    strPrint += "                              " & vbCrLf
+    strPrint += "--------------*---------------" & vbCrLf
+    Printer.Print(strPrint)
   End Sub
 End Class

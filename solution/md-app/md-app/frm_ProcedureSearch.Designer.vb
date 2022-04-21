@@ -115,6 +115,7 @@ Partial Class frm_ProcedureSearch
         '
         'tb_SearchInput
         '
+        Me.tb_SearchInput.BorderRadius = 7
         Me.tb_SearchInput.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.tb_SearchInput.DefaultText = ""
         Me.tb_SearchInput.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))

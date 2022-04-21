@@ -20,20 +20,16 @@ Public Class frm_LoginAuth
     SQLiteCM.Dispose()
   End Sub
 
-    Private Sub frm_LoginAuth_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+  Private Function SHA512(ByVal input) As String
+    Dim hash As Byte() = SHA512Managed.Create().ComputeHash(Encoding.UTF8.GetBytes(input))
+    Dim stringBuilder As New StringBuilder()
+    For i As Integer = 0 To hash.Length - 1
+      stringBuilder.Append(hash(i).ToString("X2"))
+    Next
+    Return stringBuilder.ToString
+  End Function
 
-    End Sub
-
-    Private Function SHA512(ByVal input) As String
-        Dim hash As Byte() = SHA512Managed.Create().ComputeHash(Encoding.UTF8.GetBytes(input))
-        Dim stringBuilder As New StringBuilder()
-        For i As Integer = 0 To hash.Length - 1
-            stringBuilder.Append(hash(i).ToString("X2"))
-        Next
-        Return stringBuilder.ToString
-    End Function
-
-    Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_Login.Click
+  Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_Login.Click
     If tb_LoginAuth_Username.Text = Nothing _
         Or tb_LoginAuth_Username.Text = "" _
         Or tb_LoginAuth_Password.Text = Nothing _
@@ -69,7 +65,6 @@ Public Class frm_LoginAuth
         End If
       Else
         MsgBox("Username/Password invalid")
-        MsgBox(passwordhash + " vs " + TableDB.Rows(0).Item(1))
         Exit Sub
       End If
     Catch ex As Exception
@@ -83,4 +78,10 @@ Public Class frm_LoginAuth
     End Try
   End Sub
 
+  Private Sub tb_LoginAuth_KeyDown(sender As Object, e As KeyEventArgs) _
+    Handles tb_LoginAuth_Password.KeyDown, tb_LoginAuth_Username.KeyDown
+    If e.KeyCode = Keys.Enter Then
+      btn_Login_Click(sender, e)
+    End If
+  End Sub
 End Class
