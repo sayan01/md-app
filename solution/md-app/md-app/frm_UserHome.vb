@@ -41,6 +41,8 @@ Public Class frm_UserHome
     ctx_Main.Show(MousePosition.X + 2, MousePosition.Y + 2)
   End Sub
 
+#End Region
+
   Private Sub btn_NewPres_Click(sender As Object, e As EventArgs) Handles btn_NewPres.Click
     frm_PrescriptionEditor.Show()
     Me.Hide()
@@ -50,7 +52,5 @@ Public Class frm_UserHome
     frm_PatHist.Show()
     Me.Hide()
   End Sub
-
-#End Region
 
 End Class

@@ -41,6 +41,9 @@ Public Class frm_AdminHome
     ctx_Main.Show(MousePosition.X + 2, MousePosition.Y + 2)
   End Sub
 
+
+#End Region
+
   Private Sub btn_EditMed_Click(sender As Object, e As EventArgs) Handles btn_EditMed.Click
     frm_EditMed.Show()
     Me.Hide()
@@ -56,6 +59,5 @@ Public Class frm_AdminHome
     Me.Hide()
   End Sub
 
-#End Region
 
 End Class
