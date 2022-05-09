@@ -22,5 +22,10 @@ md-app
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:md_app.My.Resources.Resources.rx">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
 </members>
 </doc>

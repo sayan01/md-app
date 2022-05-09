@@ -106,6 +106,7 @@ Public Class frm_PrescriptionEditor
 
     dgv_PresTable.DataSource = dtb_consol
     dgv_PresTable.Columns("Medicines/Procedures").ReadOnly = True
+
   End Sub
 
   Private Function getFormattedDate(dt As Date) As String
@@ -188,32 +189,30 @@ Public Class frm_PrescriptionEditor
   End Sub
 
   Private Sub btn_Print_Click(sender As Object, e As EventArgs) Handles btn_Print.Click
-    Dim strPrint As String = ""
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "           MD-APP             " & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "       Patient Details        " & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "Name:" & vbTab & tb_Name.Text & vbCrLf
-    strPrint += "Age:" & vbTab & num_age.Text & vbCrLf
-    strPrint += "Gender:" & vbTab & cb_gender.SelectedItem & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "        Visit Details         " & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "Doctor:" & vbTab & frm_LoginAuth.username & vbCrLf
-    strPrint += "Date:" & vbTab & dtp_date.Value.ToLongDateString & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "         Prescription         " & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    For Each row As DataRow In dtb_consol.Rows()
-      strPrint += "• " & row(0).ToString & vbTab & "(" & row(1).ToString & ")" & vbCrLf
-    Next
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += "       Doctor's Advice        " & vbCrLf
-    strPrint += "------------------------------" & vbCrLf
-    strPrint += rtb_Advice.Text & vbCrLf
-    strPrint += "                              " & vbCrLf
-    strPrint += "--------------*---------------" & vbCrLf
-    Printer.Print(strPrint)
+
+    frm_PrescriptionPrintLayout.Show()
+    frm_PrescriptionPrintLayout.tb_Name.Text = tb_Name.Text
+    frm_PrescriptionPrintLayout.tb_Age.Text = num_age.Text
+    frm_PrescriptionPrintLayout.tb_Gender.Text = cb_gender.SelectedItem
+    frm_PrescriptionPrintLayout.tb_Doctor.Text = frm_LoginAuth.username
+    frm_PrescriptionPrintLayout.tb_Date.Text = dtp_date.Value.ToLongDateString
+    frm_PrescriptionPrintLayout.dgv_Prescriptions.DataSource = dtb_consol
+    frm_PrescriptionPrintLayout.rtb_DoctorAdvice.Text = rtb_Advice.Text
+
+    'If MsgBox("Confirm Printing?", vbYesNo, "MD-APP Printing") = MsgBoxResult.No Then
+    '  frm_PrescriptionPrintLayout.Hide()
+    '  Exit Sub
+    'End If
+
+    'Dim g, mg As Graphics
+    'g = CreateGraphics()
+    'frm_PrescriptionPrintLayout.bmp = New Bitmap(Size.Width, Size.Height, g)
+    'mg = Graphics.FromImage(frm_PrescriptionPrintLayout.bmp)
+    'mg.CopyFromScreen(Location.X, Location.Y, 0, 0, Size)
+    'frm_PrescriptionPrintLayout.printPreviewDialog.ShowDialog()
+
+    frm_PrescriptionPrintLayout.printDocument.Print()
+
+    frm_PrescriptionPrintLayout.Close()
   End Sub
 End Class

@@ -290,6 +290,7 @@ Partial Class frm_PrescriptionEditor
         '
         Me.dtp_date.BorderRadius = 5
         Me.dtp_date.CheckedState.Parent = Me.dtp_date
+        Me.dtp_date.Enabled = False
         Me.dtp_date.FillColor = System.Drawing.Color.White
         Me.dtp_date.Format = System.Windows.Forms.DateTimePickerFormat.[Long]
         Me.dtp_date.HoverState.Parent = Me.dtp_date
@@ -389,6 +390,7 @@ Partial Class frm_PrescriptionEditor
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.dgv_PresTable.DefaultCellStyle = DataGridViewCellStyle3
+        Me.dgv_PresTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
         Me.dgv_PresTable.EnableHeadersVisualStyles = False
         Me.dgv_PresTable.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgv_PresTable.Location = New System.Drawing.Point(32, 62)
