@@ -25,3 +25,33 @@ After the commits are made, make a pull request, which will be merged upon valid
 
 ## License - 
 The project is kept under MIT License
+
+## Screenshots - 
+## Login
+![Demo](/screenshots/1)
+## User login
+![Demo](/screenshots/2)
+## Patient History
+![Demo](/screenshots/3)
+## Prescription Editor
+![Demo](/screenshots/4)
+## Add Medicine
+![Demo](/screenshots/16)
+## Add Procedure
+![Demo](/screenshots/17)
+## Added Medicine and Procedure
+![Demo](/screenshots/7)
+## Print prescription (or save as pdf)
+![Demo](/screenshots/8)
+## Prescription pdf
+![Demo](/screenshots/9)
+## Registration of new user
+![Demo](/screenshots/11)
+## Admin Panel
+![Demo](/screenshots/12)
+## All Patient History
+![Demo](/screenshots/13)
+## Medicine Editor
+![Demo](/screenshots/14)
+## Procedure Editor
+![Demo](/screenshots/15)
